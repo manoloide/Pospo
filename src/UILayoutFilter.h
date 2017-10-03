@@ -20,6 +20,8 @@ public:
     void removeComponent(UIComponent * component);
     void clear();
     
+    float getHeight();
+    
     bool enable, hidden;
     string name;
     vector<UIComponent *> components;

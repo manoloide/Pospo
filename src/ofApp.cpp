@@ -99,6 +99,7 @@ void ofApp::mouseReleased(int x, int y, int button){
     movedCamera = false;
     
     ui.mouseReleased(x, y);
+    updateUI();
     
     process();
 }
@@ -153,7 +154,7 @@ void ofApp::updateUI(){
     for(int i = 0; i < filters.size(); i++){
         filters[i]->layout.y = auxHeight;
         ui.addComponent(&filters[i]->layout);
-        auxHeight += filters[i]->layout.h;
+        auxHeight += filters[i]->layout.getHeight();
     }
     
 }
