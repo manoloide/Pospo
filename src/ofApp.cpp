@@ -38,6 +38,8 @@ void ofApp::draw(){
     ofPushMatrix();
     ofTranslate((ofGetWidth()-260)/2, ofGetHeight()/2);
     ofTranslate(camera.x, camera.y);
+    float sca = pow(1.5, scale);
+    ofScale(sca, sca);
     ofSetColor(80);
     ofDrawRectangle(-2, -2, 4, 4);
     ofSetColor(255);
@@ -58,6 +60,8 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+    if(key == '+') scale = ofClamp(scale+1, -5, 5);
+    if(key == '-') scale = ofClamp(scale-1, -5, 5);
     if(key == 'r') initFilter();
     if(key == 'p') process();
     if(key == ' ') viewOriginal = true;
@@ -97,6 +101,12 @@ void ofApp::mouseReleased(int x, int y, int button){
     ui.mouseReleased(x, y);
     
     process();
+}
+
+
+//--------------------------------------------------------------
+void ofApp::mouseScrolled(int x, int y, float scrollX, float scrollY){
+ 
 }
 
 //--------------------------------------------------------------
