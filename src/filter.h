@@ -2,16 +2,20 @@
 #define filter_h
 
 #include "ofMain.h"
-#include "UILayout.h"
+#include "UILayoutFilter.h"
 
 class Filter{
 public:
     virtual void init(ofFbo * image) = 0;
     virtual void process(ofFbo * image) = 0;
     
+    bool getEnable() {
+        return layout.enable;
+    }
+    
     bool enable = true;
     string name;
-    UILayout layout;
+    UILayoutFilter layout;
     
 };
 

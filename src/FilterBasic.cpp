@@ -6,11 +6,11 @@ void FilterBasic::init(ofFbo * image){
     
     name = "BASIC";
     
-    layout.setup(0, 0, 260, 140);
-    hue.setup(10, 30, 240, 8, 0, 1, 0,  "Hue");
-    brightness.setup(10, 60, 240, 8, 0, 2, 1,  "Brightness");
-    contrast.setup(10, 90, 240, 8, 0, 2, 1,  "Contrast");
-    saturation.setup(10, 120, 240, 8, 0, 2, 1,  "Saturation");
+    layout.setup(0, 0, 260, 150, name);
+    hue.setup(10, 40, 240, 8, 0, 1, 0,  "Hue");
+    brightness.setup(10, 70, 240, 8, 0, 2, 1,  "Brightness");
+    contrast.setup(10, 100, 240, 8, 0, 2, 1,  "Contrast");
+    saturation.setup(10, 130, 240, 8, 0, 2, 1,  "Saturation");
     
     layout.addComponent(&hue);
     layout.addComponent(&contrast);

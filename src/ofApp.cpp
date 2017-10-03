@@ -164,6 +164,6 @@ void ofApp::process(){
     original.draw(0, 0);
     pospo.end();
     for(int i = 0; i < filters.size(); i++) {
-        if(filters[i]->enable) filters[i]->process(&pospo);
+        if(filters[i]->getEnable()) filters[i]->process(&pospo);
     }
 }

@@ -4,8 +4,8 @@ void FilterBlur::init(ofFbo * image){
     
     name = "BLUR";
     
-    layout.setup(0, 0, 260, 40);
-    amount.setup(10, 30, 240, 8, 0, 4, 0,  "Blur amount");
+    layout.setup(0, 0, 260, 60, name);
+    amount.setup(10, 40, 240, 8, 0, 4, 0,  "Blur amount");
     
     
     layout.addComponent(&amount);
