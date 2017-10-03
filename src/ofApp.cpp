@@ -20,6 +20,7 @@ void ofApp::setup(){
     filters.push_back(new FilterBasic());
     filters.push_back(new FilterBlur());
     filters.push_back(new FilterVignette());
+    filters.push_back(new FilterGrain());
     
     original.load("init.jpg");
     original.resize(original.getWidth()/4, original.getHeight()/4);

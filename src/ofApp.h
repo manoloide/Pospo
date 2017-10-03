@@ -4,6 +4,7 @@
 #include "filter.h"
 #include "FilterBasic.h"
 #include "FilterBlur.h"
+#include "FilterGrain.h"
 #include "FilterVignette.h"
 #include "UILayout.h"
 #include "UISlider.h"
