@@ -7,18 +7,10 @@ void ofApp::setup(){
     
     
     ui.setup(ofGetWidth()-260, 0, 260, ofGetHeight());
-    s1.setup(10, 30, 240, 8, 0, 1, 0.5,  "slider 1");
-    s2.setup(10, 60, 240, 8, 0, 1, 0.25, "slider 2");
-    s3.setup(10, 90, 240, 8, 0, 1, 0.75, "slider 3");
-    s4.setup(10, 120, 240, 8, 0, 1, 1.0, "slider 4");
-    
-    ui.addComponent(&s1);
-    ui.addComponent(&s2);
-    ui.addComponent(&s3);
-    ui.addComponent(&s4);
     
     filters.push_back(new FilterBasic());
     filters.push_back(new FilterBlur());
+    filters.push_back(new FilterBloom());
     filters.push_back(new FilterVignette());
     filters.push_back(new FilterGrain());
     

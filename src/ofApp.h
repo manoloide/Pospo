@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "filter.h"
 #include "FilterBasic.h"
+#include "FilterBloom.h"
 #include "FilterBlur.h"
 #include "FilterGrain.h"
 #include "FilterVignette.h"
