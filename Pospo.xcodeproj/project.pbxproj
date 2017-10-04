@@ -19,6 +19,7 @@
 		930E0D521F841A8100A708B9 /* FilterGrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D501F841A8100A708B9 /* FilterGrain.cpp */; };
 		930E0D551F84334000A708B9 /* UILayoutFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D531F84334000A708B9 /* UILayoutFilter.cpp */; };
 		930E0D581F844C5400A708B9 /* FilterBloom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D561F844C5400A708B9 /* FilterBloom.cpp */; };
+		930E0D5B1F84730200A708B9 /* FilterChromaticAberration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D591F84730200A708B9 /* FilterChromaticAberration.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		93B76EC81F818EC7007120F6 /* UISlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93B76EC61F818EC7007120F6 /* UISlider.cpp */; };
 		93B76ECE1F81AB84007120F6 /* UILayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93B76ECC1F81AB84007120F6 /* UILayout.cpp */; };
@@ -87,6 +88,8 @@
 		930E0D541F84334000A708B9 /* UILayoutFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayoutFilter.h; sourceTree = "<group>"; };
 		930E0D561F844C5400A708B9 /* FilterBloom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilterBloom.cpp; sourceTree = "<group>"; };
 		930E0D571F844C5400A708B9 /* FilterBloom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterBloom.h; sourceTree = "<group>"; };
+		930E0D591F84730200A708B9 /* FilterChromaticAberration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilterChromaticAberration.cpp; sourceTree = "<group>"; };
+		930E0D5A1F84730200A708B9 /* FilterChromaticAberration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterChromaticAberration.h; sourceTree = "<group>"; };
 		93B76EC61F818EC7007120F6 /* UISlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UISlider.cpp; sourceTree = "<group>"; };
 		93B76EC71F818EC7007120F6 /* UISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISlider.h; sourceTree = "<group>"; };
 		93B76ECA1F819D66007120F6 /* UIComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIComponent.h; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 				930E0D561F844C5400A708B9 /* FilterBloom.cpp */,
 				93B76ED71F82BDC2007120F6 /* FilterBlur.h */,
 				93B76ED61F82BDC2007120F6 /* FilterBlur.cpp */,
+				930E0D5A1F84730200A708B9 /* FilterChromaticAberration.h */,
+				930E0D591F84730200A708B9 /* FilterChromaticAberration.cpp */,
 				930E0D511F841A8100A708B9 /* FilterGrain.h */,
 				930E0D501F841A8100A708B9 /* FilterGrain.cpp */,
 				930E0D4E1F833D1000A708B9 /* FilterVignette.h */,
@@ -353,6 +358,7 @@
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				930E0D581F844C5400A708B9 /* FilterBloom.cpp in Sources */,
+				930E0D5B1F84730200A708B9 /* FilterChromaticAberration.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				930E0D521F841A8100A708B9 /* FilterGrain.cpp in Sources */,

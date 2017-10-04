@@ -5,6 +5,7 @@
 #include "FilterBasic.h"
 #include "FilterBloom.h"
 #include "FilterBlur.h"
+#include "FilterChromaticAberration.h"
 #include "FilterGrain.h"
 #include "FilterVignette.h"
 #include "UILayout.h"
