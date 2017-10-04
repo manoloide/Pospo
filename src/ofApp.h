@@ -40,7 +40,7 @@ class ofApp : public ofBaseApp{
     ofImage original;
     ofFbo pospo;
     ofVec3f camera;
-    float scale;
+    float zoom;
     
     vector<Filter *> filters;
     
