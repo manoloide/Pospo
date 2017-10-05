@@ -21,6 +21,7 @@
 		930E0D581F844C5400A708B9 /* FilterBloom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D561F844C5400A708B9 /* FilterBloom.cpp */; };
 		930E0D5B1F84730200A708B9 /* FilterChromaticAberration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D591F84730200A708B9 /* FilterChromaticAberration.cpp */; };
 		930E0D5E1F85631800A708B9 /* FilterLensDistortion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D5C1F85631800A708B9 /* FilterLensDistortion.cpp */; };
+		930E0D651F867CF800A708B9 /* FilterFilm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D631F867CF800A708B9 /* FilterFilm.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		93B76EC81F818EC7007120F6 /* UISlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93B76EC61F818EC7007120F6 /* UISlider.cpp */; };
 		93B76ECE1F81AB84007120F6 /* UILayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93B76ECC1F81AB84007120F6 /* UILayout.cpp */; };
@@ -95,6 +96,8 @@
 		930E0D5D1F85631800A708B9 /* FilterLensDistortion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterLensDistortion.h; sourceTree = "<group>"; };
 		930E0D611F85C33400A708B9 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
 		930E0D621F865D9E00A708B9 /* UIValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIValue.h; sourceTree = "<group>"; };
+		930E0D631F867CF800A708B9 /* FilterFilm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilterFilm.cpp; sourceTree = "<group>"; };
+		930E0D641F867CF800A708B9 /* FilterFilm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterFilm.h; sourceTree = "<group>"; };
 		93B76EC61F818EC7007120F6 /* UISlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UISlider.cpp; sourceTree = "<group>"; };
 		93B76EC71F818EC7007120F6 /* UISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISlider.h; sourceTree = "<group>"; };
 		93B76ECA1F819D66007120F6 /* UIComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIComponent.h; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				93B76ED61F82BDC2007120F6 /* FilterBlur.cpp */,
 				930E0D5A1F84730200A708B9 /* FilterChromaticAberration.h */,
 				930E0D591F84730200A708B9 /* FilterChromaticAberration.cpp */,
+				930E0D641F867CF800A708B9 /* FilterFilm.h */,
+				930E0D631F867CF800A708B9 /* FilterFilm.cpp */,
 				930E0D511F841A8100A708B9 /* FilterGrain.h */,
 				930E0D501F841A8100A708B9 /* FilterGrain.cpp */,
 				930E0D5D1F85631800A708B9 /* FilterLensDistortion.h */,
@@ -362,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				930E0D5E1F85631800A708B9 /* FilterLensDistortion.cpp in Sources */,
+				930E0D651F867CF800A708B9 /* FilterFilm.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				930E0D4C1F83026000A708B9 /* FilterBasic.cpp in Sources */,

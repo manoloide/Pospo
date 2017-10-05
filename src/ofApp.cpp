@@ -15,6 +15,7 @@ void ofApp::setup(){
     filters.push_back(new FilterBloom());
     filters.push_back(new FilterVignette());
     filters.push_back(new FilterGrain());
+    filters.push_back(new FilterFilm());
     
     original.load("init.jpg");
     original.resize(original.getWidth()/4, original.getHeight()/4);
