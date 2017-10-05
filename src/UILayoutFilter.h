@@ -26,6 +26,7 @@ public:
     float getHeight();
     
     bool enable, hidden;
+    bool toUp, toDown;
     string name;
     vector<UIValue *> components;
 };

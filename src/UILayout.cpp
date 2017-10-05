@@ -50,7 +50,7 @@ void UILayout::addComponent(UIComponent * component) {
 void UILayout::removeComponent(UIComponent * component) {
     for(int i = 0; i < components.size(); i++){
         if(components[i] == component){
-            
+            components.erase(components.begin()+i);
         }
     }
 }

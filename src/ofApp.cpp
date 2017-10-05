@@ -144,8 +144,34 @@ void ofApp::initFilter(){
     updateUI();
 }
 
+void ofApp::filtersReorder() {
+    for(int i = 0; i < filters.size(); i++) {
+        if(filters[i]->layout.toDown && i < filters.size()-1){
+            Filter * aux = filters[i];
+            filters.erase(filters.begin()+i);
+            filters.insert(filters.begin()+i+1, aux);
+            i--;
+            aux->layout.toDown = false;
+        }
+        if(filters[i]->layout.toUp && i > 0){
+            Filter * aux = filters[i];
+            filters.erase(filters.begin()+i);
+            filters.insert(filters.begin()+i-1, aux);
+            aux->layout.toUp = false;
+        }
+        /*
+         if(filters[i]->layout.remove){
+            filters.erase(filters.begin()+i);
+            i--;
+         }
+         */
+    }
+}
+
 void ofApp::updateUI(){
     ui.clear();
+    
+    filtersReorder();
     
     float auxHeight = 0;
     for(int i = 0; i < filters.size(); i++){

@@ -62,6 +62,8 @@ void UILayoutFilter::mousePressed(int mouseX, int mouseY){
         if(mx >= 5 && mx < 15) hidden = !hidden;
         if(mx >= 20 && mx < 30) enable = !enable;
         if(mx >= w-45 && mx < w-35) randValue();
+        if(mx >= w-30 && mx < w-20) toDown = true;
+        if(mx >= w-15 && mx < w-5) toUp = true;
     }
     
     if(hidden) return;
@@ -87,7 +89,7 @@ void UILayoutFilter::addComponent(UIValue * component) {
 void UILayoutFilter::removeComponent(UIValue * component) {
     for(int i = 0; i < components.size(); i++){
         if(components[i] == component){
-            
+            components.erase(components.begin()+i);
         }
     }
 }

@@ -33,6 +33,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     void initFilter();
+    void filtersReorder();
     void updateUI();
     void process();
     
