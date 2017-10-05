@@ -24,16 +24,23 @@ void UILayoutFilter::draw(){
     ofTranslate(x, y);
     ofSetColor(0);
     ofDrawRectangle(0, 0, w, 20);
-    ofSetColor(255);
-    ofDrawBitmapString(name, 40, 14);
     
     ofSetColor(30);
     ofDrawRectangle(20, 5, 10, 10);
+    ofDrawRectangle(w-45, 5, 10, 10);
+    
+    ofSetColor(255);
+    ofDrawBitmapString(name, 40, 14);
+    ofDrawBitmapString("r", w-43, 14);
+    
     ofSetColor(120);
     if(hidden)
         ofDrawTriangle(8, 6, 8, 14, 12, 10);
     else
         ofDrawTriangle(6, 8, 14, 8, 10, 12);
+    
+    ofDrawTriangle(w-25-4, 8, w-25+4, 8, w-25, 12);
+    ofDrawTriangle(w-10-4, 12, w-10+4, 12, w-10, 8);
         
     if(enable) ofDrawCircle(25, 10, 3);
     
@@ -51,8 +58,11 @@ void UILayoutFilter::mousePressed(int mouseX, int mouseY){
     float mx = mouseX-x;
     float my = mouseY-y;
     
-    if(mx >= 5 && mx < 15 && my >= 5 && my <= 15) hidden = !hidden;
-    if(mx >= 20 && mx < 30 && my >= 5 && my <= 15) enable = !enable;
+    if(my >= 5 && my <= 15){
+        if(mx >= 5 && mx < 15) hidden = !hidden;
+        if(mx >= 20 && mx < 30) enable = !enable;
+        if(mx >= w-45 && mx < w-35) randValue();
+    }
     
     if(hidden) return;
     for(int i = 0; i < components.size(); i++){
@@ -70,11 +80,11 @@ void UILayoutFilter::mouseReleased(int mouseX, int mouseY){
     }
 }
 
-void UILayoutFilter::addComponent(UIComponent * component) {
+void UILayoutFilter::addComponent(UIValue * component) {
     components.push_back(component);
 }
 
-void UILayoutFilter::removeComponent(UIComponent * component) {
+void UILayoutFilter::removeComponent(UIValue * component) {
     for(int i = 0; i < components.size(); i++){
         if(components[i] == component){
             
@@ -82,11 +92,17 @@ void UILayoutFilter::removeComponent(UIComponent * component) {
     }
 }
 
-void UILayoutFilter::clear(){
+void UILayoutFilter::clear() {
     components.clear();
 }
 
-float UILayoutFilter::getHeight(){
+float UILayoutFilter::getHeight() {
     if(hidden) return 20;
     return h;
+}
+
+void UILayoutFilter::randValue() {
+    for(int i = 0; i < components.size(); i++) {
+        components[i]->randValue();
+    }
 }

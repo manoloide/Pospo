@@ -3,6 +3,7 @@
 
 #include "ofMain.h"
 #include "UIComponent.h"
+#include "UIValue.h"
 
 class UILayoutFilter : public UIComponent{
 public:
@@ -16,15 +17,17 @@ public:
     void mouseDragged(int mouseX, int mouseY);
     void mouseReleased(int mouseX, int mouseY);
     
-    void addComponent(UIComponent * component);
-    void removeComponent(UIComponent * component);
+    void addComponent(UIValue * component);
+    void removeComponent(UIValue * component);
     void clear();
+    
+    void randValue();
     
     float getHeight();
     
     bool enable, hidden;
     string name;
-    vector<UIComponent *> components;
+    vector<UIValue *> components;
 };
 
 #endif

@@ -2,10 +2,10 @@
 #define UISlider_h
 
 #include "ofMain.h"
-#include "UIComponent.h"
+#include "UIValue.h"
 
 
-class UISlider : public UIComponent{
+class UISlider : public UIValue{
 public:
     
     UISlider();
@@ -17,6 +17,8 @@ public:
     void mousePressed(int mouseX, int mouseY) override;
     void mouseDragged(int mouseX, int mouseY) override;
     void mouseReleased(int mouseX, int mouseY) override;
+    
+    void randValue() override;
     
     bool on, dragged;
     float min, max, value;

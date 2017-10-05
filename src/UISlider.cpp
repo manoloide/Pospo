@@ -47,3 +47,7 @@ void UISlider::mouseDragged(int mouseX, int mouseY){
 void UISlider::mouseReleased(int mouseX, int mouseY){
     on = dragged = false;
 }
+
+void UISlider::randValue() {
+    value = ofRandom(min, max);
+}
