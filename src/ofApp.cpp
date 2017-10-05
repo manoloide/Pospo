@@ -101,9 +101,17 @@ void ofApp::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseScrolled(int x, int y, float scrollX, float scrollY){
-    if(x<ofGetWidth()-260) {
+    float w = ofGetWidth()-260;
+    float h = ofGetHeight();
+    if(x<w) {
+        float azoom = zoom;
         zoom += scrollY*0.2;
         zoom = ofClamp(zoom, -5, 5);
+        
+        float mx = x-w*0.5;
+        float my = y-h*0.5;
+        camera.x -= (mx-camera.x)*(zoom-azoom)*0.41;
+        camera.y -= (my-camera.y)*(zoom-azoom)*0.41;
     }
 }
 
