@@ -61,7 +61,7 @@ void main() {
        aspect.y = resolution.y/resolution.x;
     }
     
-    aspect *= 2.0*resize;
+    aspect *= 1.0*resize;
     
     st -= 0.5;
     st *= aspect;
