@@ -9,6 +9,7 @@ void ofApp::setup(){
     ui.setup(ofGetWidth()-260, 0, 260, ofGetHeight());
     
     filters.push_back(new FilterBasic());
+    filters.push_back(new FilterLensDistortion());
     filters.push_back(new FilterChromaticAberration());
     filters.push_back(new FilterBlur());
     filters.push_back(new FilterBloom());

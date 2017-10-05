@@ -7,6 +7,7 @@
 #include "FilterBlur.h"
 #include "FilterChromaticAberration.h"
 #include "FilterGrain.h"
+#include "FilterLensDistortion.h"
 #include "FilterVignette.h"
 #include "UILayout.h"
 #include "UISlider.h"

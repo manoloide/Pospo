@@ -20,6 +20,7 @@
 		930E0D551F84334000A708B9 /* UILayoutFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D531F84334000A708B9 /* UILayoutFilter.cpp */; };
 		930E0D581F844C5400A708B9 /* FilterBloom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D561F844C5400A708B9 /* FilterBloom.cpp */; };
 		930E0D5B1F84730200A708B9 /* FilterChromaticAberration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D591F84730200A708B9 /* FilterChromaticAberration.cpp */; };
+		930E0D5E1F85631800A708B9 /* FilterLensDistortion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930E0D5C1F85631800A708B9 /* FilterLensDistortion.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		93B76EC81F818EC7007120F6 /* UISlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93B76EC61F818EC7007120F6 /* UISlider.cpp */; };
 		93B76ECE1F81AB84007120F6 /* UILayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93B76ECC1F81AB84007120F6 /* UILayout.cpp */; };
@@ -90,6 +91,9 @@
 		930E0D571F844C5400A708B9 /* FilterBloom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterBloom.h; sourceTree = "<group>"; };
 		930E0D591F84730200A708B9 /* FilterChromaticAberration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilterChromaticAberration.cpp; sourceTree = "<group>"; };
 		930E0D5A1F84730200A708B9 /* FilterChromaticAberration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterChromaticAberration.h; sourceTree = "<group>"; };
+		930E0D5C1F85631800A708B9 /* FilterLensDistortion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilterLensDistortion.cpp; sourceTree = "<group>"; };
+		930E0D5D1F85631800A708B9 /* FilterLensDistortion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterLensDistortion.h; sourceTree = "<group>"; };
+		930E0D611F85C33400A708B9 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
 		93B76EC61F818EC7007120F6 /* UISlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UISlider.cpp; sourceTree = "<group>"; };
 		93B76EC71F818EC7007120F6 /* UISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISlider.h; sourceTree = "<group>"; };
 		93B76ECA1F819D66007120F6 /* UIComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIComponent.h; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				6948EE371B920CB800B5AC1A /* local_addons */,
+				930E0D611F85C33400A708B9 /* data */,
 				E4B69B5B0A3A1756003C02F2 /* PospoDebug.app */,
 			);
 			sourceTree = "<group>";
@@ -243,6 +248,8 @@
 				930E0D591F84730200A708B9 /* FilterChromaticAberration.cpp */,
 				930E0D511F841A8100A708B9 /* FilterGrain.h */,
 				930E0D501F841A8100A708B9 /* FilterGrain.cpp */,
+				930E0D5D1F85631800A708B9 /* FilterLensDistortion.h */,
+				930E0D5C1F85631800A708B9 /* FilterLensDistortion.cpp */,
 				930E0D4E1F833D1000A708B9 /* FilterVignette.h */,
 				930E0D4D1F833D1000A708B9 /* FilterVignette.cpp */,
 				93B76ECA1F819D66007120F6 /* UIComponent.h */,
@@ -352,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930E0D5E1F85631800A708B9 /* FilterLensDistortion.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				930E0D4C1F83026000A708B9 /* FilterBasic.cpp in Sources */,
