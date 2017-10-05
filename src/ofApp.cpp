@@ -60,6 +60,13 @@ void ofApp::keyPressed(int key){
     if(key == 'r') initFilter();
     if(key == 'p') process();
     if(key == ' ') viewOriginal = true;
+    
+    if(key == 'h') {
+        for(int i = 0; i < filters.size(); i++){
+            filters[i]->layout.hidden = true;
+        }
+        updateUI();
+    }
 }
 
 //--------------------------------------------------------------

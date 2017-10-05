@@ -46,9 +46,11 @@ void main() {
     vec2 st = texCoordVarying/resolution;
     
     float bar = barrel;
+    float resize = sqrt(2);
     
     if(barrel < 1.0) {
         bar = 0.5+barrel*0.5;
+        resize = 2.0;
     }
     
     vec2 aspect = vec2(1.0);
@@ -59,17 +61,20 @@ void main() {
        aspect.y = resolution.y/resolution.x;
     }
     
-    aspect *= 2.0;
+    aspect *= 2.0*resize;
     
     st -= 0.5;
     st *= aspect;
     vec2 st1 = desform(st*vec2(1.0-shift*0.018), bar);
     vec2 st2 = desform(st*vec2(1.0+shift*0.018), bar);
-    st1 /= aspect*0.5;
+    st1 /= aspect;
     st1 += 0.5;
-    st2 /= aspect*0.5;
+    st2 /= aspect;
     st2 += 0.5;
 
+    
+    
+    
     vec3 col1 = rgb2hsb(texture(tex0, st1*resolution).rgb);
     vec3 col2 = rgb2hsb(texture(tex0, st2*resolution).rgb);
     
