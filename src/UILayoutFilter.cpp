@@ -12,7 +12,8 @@ void UILayoutFilter::setup(float _x, float _y, float _w, float _h, string _name)
     name = _name;
     
     enable = false;
-    hidden = false;
+    hidden = true;
+    toUp = toDown = false;
 }
 void UILayoutFilter::update(){
     for(int i = 0; i < components.size(); i++){
@@ -84,6 +85,15 @@ void UILayoutFilter::mouseReleased(int mouseX, int mouseY){
 
 void UILayoutFilter::addComponent(UIValue * component) {
     components.push_back(component);
+}
+
+UIComponent * UILayoutFilter::getComponent(string name){
+    for(int i = 0; i < components.size(); i++){
+        if(components[i]->name == name){
+            return components[i];
+        }
+    }
+    return NULL;
 }
 
 void UILayoutFilter::removeComponent(UIValue * component) {

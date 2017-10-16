@@ -2,8 +2,7 @@
 
 #include "FilterBlur.h"
 
-void FilterBasic::init(ofFbo * image){
-    
+FilterBasic::FilterBasic(){
     name = "BASIC";
     
     layout.setup(0, 0, 260, 150, name);

@@ -17,12 +17,13 @@ public:
     void mousePressed(int mouseX, int mouseY) override;
     void mouseDragged(int mouseX, int mouseY) override;
     void mouseReleased(int mouseX, int mouseY) override;
-    
+
+    float getValue() override;
+    void setValue(float val) override;
     void randValue() override;
     
     bool on, dragged;
     float min, max, value;
-    string name;
 };
 
 #endif

@@ -8,7 +8,8 @@
 class FilterBloom : public Filter {
 public:
     
-    void init(ofFbo * image);
+    FilterBloom();
+
     void process(ofFbo * image);
     
     ofShader blurX, blurY, bloom;

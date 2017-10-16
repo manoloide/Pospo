@@ -10,7 +10,7 @@
 class FilterGrain : public Filter {
 public:
     
-    void init(ofFbo * image);
+    FilterGrain();
     void process(ofFbo * image);
     
     ofShader grain;

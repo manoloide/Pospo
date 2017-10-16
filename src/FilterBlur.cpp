@@ -1,6 +1,6 @@
 #include "FilterBlur.h"
 
-void FilterBlur::init(ofFbo * image){
+FilterBlur::FilterBlur(){
     
     name = "BLUR";
     

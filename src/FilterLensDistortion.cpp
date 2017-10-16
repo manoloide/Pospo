@@ -1,6 +1,6 @@
 #include "FilterLensDistortion.h"
 
-void FilterLensDistortion::init(ofFbo * image){
+FilterLensDistortion::FilterLensDistortion(){
     
     name = "LENS DISTORTION";
     

@@ -9,7 +9,7 @@
 class FilterLensDistortion : public Filter {
 public:
     
-    void init(ofFbo * image);
+    FilterLensDistortion();
     void process(ofFbo * image);
     
     ofShader lens;

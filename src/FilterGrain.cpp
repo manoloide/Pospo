@@ -1,7 +1,7 @@
 #include "FilterGrain.h"
 
 
-void FilterGrain::init(ofFbo * image){
+FilterGrain::FilterGrain(){
     
     name = "GRAIN";
     

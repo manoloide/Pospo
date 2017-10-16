@@ -48,6 +48,15 @@ void UISlider::mouseReleased(int mouseX, int mouseY){
     on = dragged = false;
 }
 
+float UISlider::getValue() {
+    return value;
+}
+
+void UISlider::setValue(float val) {
+    value = val;
+}
+
+
 void UISlider::randValue() {
     value = ofRandom(min, max);
 }

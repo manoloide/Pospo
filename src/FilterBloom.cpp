@@ -1,6 +1,6 @@
 #include "FilterBloom.h"
 
-void FilterBloom::init(ofFbo * image){
+FilterBloom::FilterBloom(){
     
     name = "BLOOM";
     
@@ -50,7 +50,7 @@ void FilterBloom::process(ofFbo * image){
     bloom.setUniform1f("tone", tone.value);
     bloom.setUniform1f("shadows", shadows.value);
     bloom.setUniform1f("highlights", highlights.value);
-    bloom.setUniformTexture("blur", pass2.getTextureReference(), 1);
+    bloom.setUniformTexture("blur", pass2.getTexture(), 1);
     image->draw(0, 0);
     bloom.end();
     pass3.end();

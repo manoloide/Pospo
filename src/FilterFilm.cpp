@@ -1,6 +1,6 @@
 #include "FilterFilm.h"
 
-void FilterFilm::init(ofFbo * image){
+FilterFilm::FilterFilm(){
     
     name = "FILM";
     

@@ -8,7 +8,8 @@
 class FilterBasic : public Filter {
 public:
     
-    void init(ofFbo * image);
+    FilterBasic();
+    
     void process(ofFbo * image);
     
     ofShader basic;

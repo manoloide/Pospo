@@ -1,6 +1,6 @@
 #include "FilterVignette.h"
 
-void FilterVignette::init(ofFbo * image){
+FilterVignette::FilterVignette(){
     
     name = "VIGNETTE";
     

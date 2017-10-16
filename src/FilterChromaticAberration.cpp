@@ -1,6 +1,6 @@
 #include "FilterChromaticAberration.h"
 
-void FilterChromaticAberration::init(ofFbo * image){
+FilterChromaticAberration::FilterChromaticAberration(){
     
     name = "CHROMATIC ABERRATION";
     

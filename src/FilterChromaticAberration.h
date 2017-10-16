@@ -8,7 +8,8 @@
 class FilterChromaticAberration : public Filter {
 public:
     
-    void init(ofFbo * image);
+    FilterChromaticAberration();
+    
     void process(ofFbo * image);
     
     ofShader aberration;

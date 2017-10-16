@@ -47,6 +47,15 @@ void UILayout::addComponent(UIComponent * component) {
     components.push_back(component);
 }
 
+UIComponent * UILayout::getComponent(string name){
+    for(int i = 0; i < components.size(); i++){
+        if(components[i]->name == name){
+            return components[i];
+        }
+    }
+    return NULL;
+}
+
 void UILayout::removeComponent(UIComponent * component) {
     for(int i = 0; i < components.size(); i++){
         if(components[i] == component){

@@ -6,8 +6,9 @@
 
 class UIValue : public UIComponent{
 public:
-    virtual void randValue() = 0;
-    
+    virtual float getValue() = 0;
+    virtual void setValue(float val) = 0;
+    virtual void randValue() = 0;    
 };
 
 #endif

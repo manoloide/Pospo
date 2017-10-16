@@ -1,6 +1,9 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxJSON.h"
+
+
 #include "filter.h"
 #include "FilterBasic.h"
 #include "FilterBloom.h"
@@ -10,6 +13,7 @@
 #include "FilterLensDistortion.h"
 #include "FilterFilm.h"
 #include "FilterVignette.h"
+
 #include "UILayout.h"
 #include "UISlider.h"
 
@@ -33,7 +37,10 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    void initFilter();
+    void loadPresset();
+    void savePresset();
+    ofxJSON presset;
+    
     void filtersReorder();
     void updateUI();
     void process();

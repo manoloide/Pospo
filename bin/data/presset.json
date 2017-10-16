@@ -1,0 +1,95 @@
+{
+   "filters" : [
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "BASIC",
+         "values" : {
+            "Brightness" : 1,
+            "Contrast" : 1,
+            "Hue" : 0,
+            "Saturation" : 1
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "LENS DISTORTION",
+         "values" : {
+            "Barrel" : 1,
+            "Chromatic Aberration" : 0,
+            "Chromatic Shift" : 0,
+            "Defocus" : 0
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "CHROMATIC ABERRATION",
+         "values" : {
+            "Chroma" : 0
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "BLUR",
+         "values" : {
+            "Blur amount" : 0
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "BLOOM",
+         "values" : {
+            "Amount" : 0,
+            "Highlights" : 0,
+            "Shadows" : 0,
+            "Size" : 0,
+            "Tone" : 0
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "VIGNETTE",
+         "values" : {
+            "Amount" : 0,
+            "Center X" : 0,
+            "Center Y" : 0,
+            "Form" : 0.5,
+            "Size" : 0.5,
+            "Smooth" : 0.4000000059604645
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "GRAIN",
+         "values" : {
+            "Amount" : 1,
+            "Smooth" : 0.5
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "FILM",
+         "values" : {
+            "Blue HighLights" : 0.5,
+            "Blue Lights" : 0.5,
+            "Blue Shadows" : 0.5,
+            "Faded" : 1,
+            "Green HighLights" : 0.5,
+            "Green Lights" : 0.5,
+            "Green Shadows" : 0.5,
+            "Red HighLights" : 0.5,
+            "Red Lights" : 0.5,
+            "Red Shadows" : 0.5,
+            "Strength" : 1
+         }
+      }
+   ]
+}
+

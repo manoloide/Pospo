@@ -9,7 +9,7 @@
 class FilterVignette : public Filter {
 public:
     
-    void init(ofFbo * image);
+    FilterVignette();
     void process(ofFbo * image);
     
     ofShader vignette;

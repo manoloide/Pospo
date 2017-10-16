@@ -9,7 +9,8 @@
 class FilterBlur : public Filter {
 public:
     
-    void init(ofFbo * image);
+    FilterBlur();
+    
     void process(ofFbo * image);
     
     ofShader blurX, blurY;

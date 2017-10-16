@@ -5,21 +5,13 @@ void ofApp::setup(){
     
     ofSetBackgroundColor(40);
     
-    
     ui.setup(ofGetWidth()-260, 0, 260, ofGetHeight());
-    
-    filters.push_back(new FilterBasic());
-    filters.push_back(new FilterLensDistortion());
-    filters.push_back(new FilterChromaticAberration());
-    filters.push_back(new FilterBlur());
-    filters.push_back(new FilterBloom());
-    filters.push_back(new FilterVignette());
-    filters.push_back(new FilterGrain());
-    filters.push_back(new FilterFilm());
     
     original.load("init.jpg");
     original.resize(original.getWidth()/4, original.getHeight()/4);
-    initFilter();
+    pospo.allocate(original.getWidth(), original.getHeight());
+    
+    loadPresset();
     process();
 }
 
@@ -57,7 +49,11 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
     if(key == '+') zoom = ofClamp(zoom+1, -5, 5);
     if(key == '-') zoom = ofClamp(zoom-1, -5, 5);
-    if(key == 'r') initFilter();
+    if(key == 'r') {
+        loadPresset();
+        process();
+    }
+    if(key == 's') savePresset();
     if(key == 'p') process();
     if(key == ' ') viewOriginal = true;
     
@@ -146,18 +142,84 @@ void ofApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
     original.load(dragInfo.files[0]);
-    initFilter();
+    pospo.allocate(original.getWidth(), original.getHeight());
 }
 
-void ofApp::initFilter(){
-    pospo.allocate(original.getWidth(), original.getHeight());
+void ofApp::loadPresset(){
     
-    ofSetColor(255);
-    for(int i = 0; i < filters.size(); i++){
-        filters[i]->init(&pospo);
+    filters.clear();
+    
+    if (presset.open("presset.json")){
+        cout << "load presset succeed" << endl;
+        
+        for(int i = 0; i < presset["filters"].size(); i++){
+            ofxJSON json = presset["filters"][i];
+            string name = json["name"].asString();
+            
+            Filter * filter = NULL;
+            if(name == "BASIC") {
+                filter = new FilterBasic();
+            }
+            else if(name == "BLOOM") {
+                filter = new FilterBloom();
+            }
+            else if(name == "BLUR") {
+                filter = new FilterBlur();
+            }
+            else if(name == "CHROMATIC ABERRATION") {
+                filter = new FilterChromaticAberration();
+            }
+            else if(name == "FILM") {
+                filter = new FilterFilm();
+            }
+            else if(name == "GRAIN") {
+                filter = new FilterGrain();
+            }
+            else if(name == "LENS DISTORTION") {
+                filter = new FilterLensDistortion();
+            }
+            else if(name == "VIGNETTE") {
+                filter = new FilterVignette();
+            }
+            
+            
+            if(filter != NULL) {
+                filter->setJson(json);
+                filters.push_back(filter);
+            }
+        }
+    }
+    else {
+        cout << "load presset fail" << endl;
+        
+        filters.push_back(new FilterBasic());
+        filters.push_back(new FilterLensDistortion());
+        filters.push_back(new FilterChromaticAberration());
+        filters.push_back(new FilterBlur());
+        filters.push_back(new FilterBloom());
+        filters.push_back(new FilterVignette());
+        filters.push_back(new FilterGrain());
+        filters.push_back(new FilterFilm());
+        
+        savePresset();
     }
     
     updateUI();
+}
+
+void ofApp::savePresset(){
+    
+    presset = ofxJSON();
+    
+    for(int i = 0; i < filters.size(); i++){
+        presset["filters"][i] = filters[i]->getJson();
+    }
+    
+    if (!presset.save("presset.json", true)){
+        cout << "save presset fail" << endl;
+    } else {
+        cout << "save presset succeed" << endl;
+    }
 }
 
 void ofApp::filtersReorder() {

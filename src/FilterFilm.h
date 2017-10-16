@@ -9,7 +9,7 @@
 class FilterFilm : public Filter {
 public:
     
-    void init(ofFbo * image);
+    FilterFilm();
     void process(ofFbo * image);
     
     ofShader film;

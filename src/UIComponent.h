@@ -14,7 +14,7 @@ public:
     virtual void mouseReleased(int mouseX, int mouseY) = 0;
     
     float x, y, w, h;
-    
+    string name;
 };
 
 #endif

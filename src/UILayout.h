@@ -17,6 +17,7 @@ public:
     void mouseReleased(int mouseX, int mouseY);
     
     void addComponent(UIComponent * component);
+    UIComponent * getComponent(string name);
     void removeComponent(UIComponent * component);
     void clear();
     
