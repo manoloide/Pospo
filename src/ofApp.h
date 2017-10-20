@@ -48,11 +48,12 @@ class ofApp : public ofBaseApp{
     bool movedCamera;
     bool viewOriginal;
     
-    ofImage original;
     ofFbo pospo;
     ofVec3f camera;
     float zoom;
     
+    int imageIndex = 0;
+    vector<ofImage> images;
     vector<Filter *> filters;
     
     UILayout ui;

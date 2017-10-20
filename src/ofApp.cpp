@@ -7,9 +7,10 @@ void ofApp::setup(){
     
     ui.setup(ofGetWidth()-260, 0, 260, ofGetHeight());
     
-    original.load("init.jpg");
-    original.resize(original.getWidth()/4, original.getHeight()/4);
-    pospo.allocate(original.getWidth(), original.getHeight());
+    ofImage initImage;
+    initImage.load("init.jpg");
+    images.push_back(initImage);
+    pospo.allocate(initImage.getWidth(), initImage.getHeight());
     
     loadPresset();
     process();
@@ -31,8 +32,8 @@ void ofApp::draw(){
     ofDrawRectangle(-2, -2, 4, 4);
     ofSetColor(255);
     if(viewOriginal) {
-        if(original.isAllocated())
-            original.draw(original.getWidth()*-0.5, original.getHeight()*-0.5);
+        if(images[imageIndex].isAllocated())
+            images[imageIndex].draw(images[imageIndex].getWidth()*-0.5, images[imageIndex].getHeight()*-0.5);
     }
     else {
         if(pospo.isAllocated())
@@ -42,6 +43,8 @@ void ofApp::draw(){
     
     ofPushMatrix();
     ui.draw();
+    
+    ofDrawBitmapStringHighlight(ofToString(imageIndex+1)+"/"+ofToString(images.size()), 10, 15);
     ofPopMatrix();
 }
 
@@ -62,6 +65,20 @@ void ofApp::keyPressed(int key){
             filters[i]->layout.hidden = true;
         }
         updateUI();
+    }
+    
+    if(key == OF_KEY_LEFT){
+        imageIndex--;
+        if(imageIndex < 0)
+            imageIndex = images.size()-1;
+        pospo.allocate(images[imageIndex].getWidth(), images[imageIndex].getHeight());
+        process();
+    }
+    if(key == OF_KEY_RIGHT) {
+        imageIndex++;
+        imageIndex = imageIndex%images.size();
+        pospo.allocate(images[imageIndex].getWidth(), images[imageIndex].getHeight());
+        process();
     }
 }
 
@@ -140,9 +157,17 @@ void ofApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
-    original.load(dragInfo.files[0]);
-    pospo.allocate(original.getWidth(), original.getHeight());
+void ofApp::dragEvent(ofDragInfo dragInfo){
+    ofImage aux;
+    aux.load(dragInfo.files[0]);
+    
+    if(aux.isAllocated()){
+        imageIndex = images.size();
+        images.push_back(aux);
+        pospo.allocate(aux.getWidth(), aux.getHeight());
+        
+        process();
+    }
 }
 
 void ofApp::loadPresset(){
@@ -263,7 +288,7 @@ void ofApp::updateUI(){
 void ofApp::process(){
     ofSetColor(255);
     pospo.begin();
-    original.draw(0, 0);
+    images[imageIndex].draw(0, 0);
     pospo.end();
     for(int i = 0; i < filters.size(); i++) {
         if(filters[i]->getEnable()) filters[i]->process(&pospo);
