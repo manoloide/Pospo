@@ -7,7 +7,7 @@ FilterVignette::FilterVignette(){
     layout.setup(0, 0, 260, 210, name);
     amount.setup(10, 40, 240, 8, -1.0, 1.0, 0.0,  "Amount");
     form.setup(10, 70, 240, 8, 0, 1, 0.5,  "Form");
-    size.setup(10, 100, 240, 8, 0.1, 1, 0.5,  "Size");
+    size.setup(10, 100, 240, 8, 0.5, 3, 1.0,  "Size");
     smooth.setup(10, 130, 240, 8, 0.01, 1, 0.4,  "Smooth");
     centerX.setup(10, 160, 240, 8, -0.5, 0.5, 0.0,  "Center X");
     centerY.setup(10, 190, 240, 8, -0.5, 0.5, 0.0,  "Center Y");

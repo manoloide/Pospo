@@ -5,10 +5,10 @@
          "hidden" : true,
          "name" : "BASIC",
          "values" : {
-            "Brightness" : 1,
-            "Contrast" : 1,
-            "Hue" : 0,
-            "Saturation" : 1
+            "Brightness" : 2,
+            "Contrast" : 2,
+            "Hue" : 1,
+            "Saturation" : 2
          }
       },
       {
@@ -16,10 +16,10 @@
          "hidden" : true,
          "name" : "LENS DISTORTION",
          "values" : {
-            "Barrel" : 1,
-            "Chromatic Aberration" : 0,
-            "Chromatic Shift" : 0,
-            "Defocus" : 0
+            "Barrel" : 2,
+            "Chromatic Aberration" : 1,
+            "Chromatic Shift" : 1,
+            "Defocus" : 1
          }
       },
       {
@@ -27,7 +27,7 @@
          "hidden" : true,
          "name" : "CHROMATIC ABERRATION",
          "values" : {
-            "Chroma" : 0
+            "Chroma" : 1
          }
       },
       {
@@ -35,7 +35,7 @@
          "hidden" : true,
          "name" : "BLUR",
          "values" : {
-            "Blur amount" : 0
+            "Blur amount" : 4
          }
       },
       {
@@ -43,24 +43,24 @@
          "hidden" : true,
          "name" : "BLOOM",
          "values" : {
-            "Amount" : 0,
-            "Highlights" : 0,
-            "Shadows" : 0,
-            "Size" : 0,
-            "Tone" : 0
+            "Amount" : 1,
+            "Highlights" : 1,
+            "Shadows" : 1,
+            "Size" : 4,
+            "Tone" : 1
          }
       },
       {
-         "enable" : false,
-         "hidden" : true,
+         "enable" : true,
+         "hidden" : false,
          "name" : "VIGNETTE",
          "values" : {
-            "Amount" : 0,
+            "Amount" : -1,
             "Center X" : 0,
             "Center Y" : 0,
-            "Form" : 0.5,
-            "Size" : 0.5,
-            "Smooth" : 0.4000000059604645
+            "Form" : 0,
+            "Size" : 3,
+            "Smooth" : 0.009999999776482582
          }
       },
       {
@@ -69,7 +69,7 @@
          "name" : "GRAIN",
          "values" : {
             "Amount" : 1,
-            "Smooth" : 0.5
+            "Smooth" : 1
          }
       },
       {
@@ -77,16 +77,16 @@
          "hidden" : true,
          "name" : "FILM",
          "values" : {
-            "Blue HighLights" : 0.5,
-            "Blue Lights" : 0.5,
-            "Blue Shadows" : 0.5,
+            "Blue HighLights" : 1,
+            "Blue Lights" : 1,
+            "Blue Shadows" : 1,
             "Faded" : 1,
-            "Green HighLights" : 0.5,
-            "Green Lights" : 0.5,
-            "Green Shadows" : 0.5,
-            "Red HighLights" : 0.5,
-            "Red Lights" : 0.5,
-            "Red Shadows" : 0.5,
+            "Green HighLights" : 1,
+            "Green Lights" : 1,
+            "Green Shadows" : 1,
+            "Red HighLights" : 1,
+            "Red Lights" : 1,
+            "Red Shadows" : 1,
             "Strength" : 1
          }
       }

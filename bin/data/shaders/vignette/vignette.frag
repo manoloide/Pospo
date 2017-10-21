@@ -19,28 +19,19 @@ void main() {
     vec2 st = texCoordVarying/resolution;
     st -= vec2(0.5)+center;
     
-    vec2 rect = vec2(st)*size*10.0;
+    vec2 rect = vec2(st)*size*(1.0+form);
     
+    float aspx = resolution.x/resolution.y;
+    float aspy = resolution.y/resolution.x;
     
-    float aspX = resolution.x/resolution.y;
-    float aspY = resolution.y/resolution.x;
-    float asp = max(aspX, aspY);
-    
-    float sx = 1.0*asp;
-    float sy = 1.0*asp;
-    
-    if(resolution.x < resolution.y){
-        rect.y *= asp;
-        st.y *= asp;
-        sx *= mix(1.0, aspX*0.5, form);
+    if(resolution.x > resolution.y){
+        rect.x *= aspx;
     }else {
-        rect.y *= asp;
-        st.y *= asp;
-        sx *= mix(1.0, aspX*0.5, form);
+        rect.y *= aspy;
     }
     
-    float bx = sx*form;
-    float by = sy*form;
+    float bx = form*aspx;
+    float by = form*aspy;
     
     vec3 bor = vec3(1.0, 1.0, 0.0);
     if(abs(rect.x) < bx){
@@ -58,15 +49,6 @@ void main() {
     float dis = distance(rect, vec2(0));
     dis = smoothstep(0.999-smoothed, 1.0+smoothed, dis);
     col = mix(col, vec3(trunc(1.0+amount)), dis*abs(amount));
-    
-     /*
-    float print = smoothstep(sx, sx-0.001, abs(st.x))*smoothstep(sy, sy-0.001, abs(st.y));
-    col = mix(col, bor, print);
-     */
-    /*
-    float print2 = smoothstep(0.5, 0.0, abs(rect.x))*smoothstep(0.5, 0.0, abs(rect.y));
-    col = mix(col, vec3(0.0, 1.0, 0.0), print2);
-     */
     
     outputColor = vec4(col, color.a);
 }
