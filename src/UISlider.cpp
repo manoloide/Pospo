@@ -10,7 +10,7 @@ void UISlider::setup(float _x, float _y, float _w, float _h, float _min, float _
     h = _h;
     min = _min;
     max = _max;
-    value = _val;
+    def = value = _val;
     name = _name;
 }
 
@@ -29,11 +29,14 @@ void UISlider::draw(){
     ofDrawBitmapString(name, x, y-4);
 }
 
-void UISlider::mousePressed(int mouseX, int mouseY){
+void UISlider::mousePressed(int mouseX, int mouseY, int button){
     on = (mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
     dragged = on;
     if(dragged) {
         value = ofClamp(ofMap(mouseX, x, x+w, min, max), min, max);
+        if(button == 2){
+            value = def;
+        }
     }
 }
 

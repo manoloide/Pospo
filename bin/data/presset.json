@@ -1,92 +1,92 @@
 {
    "filters" : [
       {
-         "enable" : false,
+         "enable" : true,
          "hidden" : true,
          "name" : "BASIC",
          "values" : {
-            "Brightness" : 2,
-            "Contrast" : 2,
-            "Hue" : 1,
-            "Saturation" : 2
+            "Brightness" : 1,
+            "Contrast" : 1,
+            "Hue" : 0,
+            "Saturation" : 1
          }
       },
       {
-         "enable" : false,
+         "enable" : true,
          "hidden" : true,
          "name" : "LENS DISTORTION",
          "values" : {
-            "Barrel" : 2,
-            "Chromatic Aberration" : 1,
-            "Chromatic Shift" : 1,
-            "Defocus" : 1
-         }
-      },
-      {
-         "enable" : false,
-         "hidden" : true,
-         "name" : "CHROMATIC ABERRATION",
-         "values" : {
-            "Chroma" : 1
-         }
-      },
-      {
-         "enable" : false,
-         "hidden" : true,
-         "name" : "BLUR",
-         "values" : {
-            "Blur amount" : 4
-         }
-      },
-      {
-         "enable" : false,
-         "hidden" : true,
-         "name" : "BLOOM",
-         "values" : {
-            "Amount" : 1,
-            "Highlights" : 1,
-            "Shadows" : 1,
-            "Size" : 4,
-            "Tone" : 1
+            "Barrel" : 1,
+            "Chromatic Aberration" : 0,
+            "Chromatic Shift" : 0,
+            "Defocus" : 0
          }
       },
       {
          "enable" : true,
          "hidden" : false,
-         "name" : "VIGNETTE",
+         "name" : "CHROMATIC ABERRATION",
          "values" : {
-            "Amount" : -1,
-            "Center X" : 0,
-            "Center Y" : 0,
-            "Form" : 0,
-            "Size" : 3,
-            "Smooth" : 0.009999999776482582
+            "Chroma" : 0.04583333432674408
          }
       },
       {
-         "enable" : false,
+         "enable" : true,
+         "hidden" : true,
+         "name" : "BLUR",
+         "values" : {
+            "Blur amount" : 0
+         }
+      },
+      {
+         "enable" : true,
+         "hidden" : true,
+         "name" : "BLOOM",
+         "values" : {
+            "Amount" : 0.1458333283662796,
+            "Highlights" : 0,
+            "Shadows" : 0,
+            "Size" : 0.4833333194255829,
+            "Tone" : 0
+         }
+      },
+      {
+         "enable" : true,
+         "hidden" : true,
+         "name" : "VIGNETTE",
+         "values" : {
+            "Amount" : -0.6499999761581421,
+            "Center X" : 0,
+            "Center Y" : 0,
+            "Form" : 0.5,
+            "Size" : 1.46875,
+            "Smooth" : 0.4183749854564667
+         }
+      },
+      {
+         "enable" : true,
          "hidden" : true,
          "name" : "GRAIN",
          "values" : {
             "Amount" : 1,
-            "Smooth" : 1
+            "Smooth" : 0.5
          }
       },
       {
-         "enable" : false,
+         "enable" : true,
          "hidden" : true,
          "name" : "FILM",
          "values" : {
-            "Blue HighLights" : 1,
-            "Blue Lights" : 1,
-            "Blue Shadows" : 1,
+            "Blue HighLights" : 0.5,
+            "Blue Lights" : 0.5,
+            "Blue Shadows" : 0.5,
             "Faded" : 1,
-            "Green HighLights" : 1,
-            "Green Lights" : 1,
-            "Green Shadows" : 1,
-            "Red HighLights" : 1,
-            "Red Lights" : 1,
-            "Red Shadows" : 1,
+            "Green HighLights" : 0.5,
+            "Green Lights" : 0.5,
+            "Green Shadows" : 0.5,
+            "Red HighLights" : 0.5,
+            "Red Lights" : 0.5,
+            "Red Shadows" : 0.5,
             "Strength" : 1
          }
       }

@@ -14,7 +14,7 @@ public:
     void update() override;
     void draw() override;
     
-    void mousePressed(int mouseX, int mouseY) override;
+    void mousePressed(int mouseX, int mouseY, int button) override;
     void mouseDragged(int mouseX, int mouseY) override;
     void mouseReleased(int mouseX, int mouseY) override;
 
@@ -23,7 +23,7 @@ public:
     void randValue() override;
     
     bool on, dragged;
-    float min, max, value;
+    float min, max, value, def;
 };
 
 #endif

@@ -12,7 +12,7 @@ public:
     void update();
     void draw();
     
-    void mousePressed(int mouseX, int mouseY);
+    void mousePressed(int mouseX, int mouseY, int button);
     void mouseDragged(int mouseX, int mouseY);
     void mouseReleased(int mouseX, int mouseY);
     

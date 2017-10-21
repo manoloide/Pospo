@@ -106,7 +106,7 @@ void ofApp::mouseDragged(int x, int y, int button){
 void ofApp::mousePressed(int x, int y, int button){
     movedCamera = x<ofGetWidth()-260;
     
-    ui.mousePressed(x, y);
+    ui.mousePressed(x, y, button);
 }
 
 //--------------------------------------------------------------
