@@ -1,7 +1,7 @@
 {
    "filters" : [
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "BASIC",
          "values" : {
@@ -12,7 +12,7 @@
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "LENS DISTORTION",
          "values" : {
@@ -23,15 +23,15 @@
          }
       },
       {
-         "enable" : true,
-         "hidden" : false,
+         "enable" : false,
+         "hidden" : true,
          "name" : "CHROMATIC ABERRATION",
          "values" : {
-            "Chroma" : 0.04583333432674408
+            "Chroma" : 0
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "BLUR",
          "values" : {
@@ -39,32 +39,92 @@
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "BLOOM",
          "values" : {
-            "Amount" : 0.1458333283662796,
+            "Amount" : 0,
             "Highlights" : 0,
             "Shadows" : 0,
-            "Size" : 0.4833333194255829,
+            "Size" : 0,
             "Tone" : 0
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
-         "name" : "VIGNETTE",
+         "name" : "BLOOM",
          "values" : {
-            "Amount" : -0.6499999761581421,
-            "Center X" : 0,
-            "Center Y" : 0,
-            "Form" : 0.5,
-            "Size" : 1.46875,
-            "Smooth" : 0.4183749854564667
+            "Amount" : 0,
+            "Highlights" : 0,
+            "Shadows" : 0,
+            "Size" : 0,
+            "Tone" : 0
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
+         "hidden" : true,
+         "name" : "BLOOM",
+         "values" : {
+            "Amount" : 0,
+            "Highlights" : 0,
+            "Shadows" : 0,
+            "Size" : 0,
+            "Tone" : 0
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "BLOOM",
+         "values" : {
+            "Amount" : 0,
+            "Highlights" : 0,
+            "Shadows" : 0,
+            "Size" : 0,
+            "Tone" : 0
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "BLOOM",
+         "values" : {
+            "Amount" : 0,
+            "Highlights" : 0,
+            "Shadows" : 0,
+            "Size" : 0,
+            "Tone" : 0
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "BLOOM",
+         "values" : {
+            "Amount" : 0,
+            "Highlights" : 0,
+            "Shadows" : 0,
+            "Size" : 0,
+            "Tone" : 0
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
+         "name" : "VIGNETTE",
+         "values" : {
+            "Amount" : 0,
+            "Center X" : 0,
+            "Center Y" : 0,
+            "Form" : 0.5,
+            "Size" : 1,
+            "Smooth" : 0.4000000059604645
+         }
+      },
+      {
+         "enable" : false,
          "hidden" : true,
          "name" : "GRAIN",
          "values" : {
@@ -73,7 +133,7 @@
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "FILM",
          "values" : {

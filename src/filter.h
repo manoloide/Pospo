@@ -3,6 +3,7 @@
 
 #include "ofMain.h"
 #include "ofxJSON.h"
+#include "Globals.h"
 #include "UILayoutFilter.h"
 
 class Filter{
@@ -46,8 +47,11 @@ public:
         }
     }
 
+    Globals * globals;
+    
     string name;
     UILayoutFilter layout;
+    
     
 };
 

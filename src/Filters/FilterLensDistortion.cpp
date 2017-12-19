@@ -16,14 +16,15 @@ FilterLensDistortion::FilterLensDistortion(){
     layout.addComponent(&defocus);
     
     lens.load("shaders/lens/lens");
+    
+    globals = Globals::Instance();
 }
 
 void FilterLensDistortion::process(ofFbo * image){
     
-    ofFbo pass1;
-    pass1.allocate(image->getWidth(), image->getHeight());
+    ofFbo * pass1 = globals->pass1;
     
-    pass1.begin();
+    pass1->begin();
     lens.begin();
     lens.setUniform1f("barrel", barrel.value);
     lens.setUniform1f("shift", shift.value);
@@ -32,11 +33,11 @@ void FilterLensDistortion::process(ofFbo * image){
     lens.setUniform2f("resolution", image->getWidth(), image->getHeight());
     image->draw(0, 0);
     lens.end();
-    pass1.end();
+    pass1->end();
     
     
     image->begin();
-    pass1.draw(0, 0);
+    pass1->draw(0, 0);
     image->end();
     
 }

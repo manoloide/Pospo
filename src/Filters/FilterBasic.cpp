@@ -17,15 +17,15 @@ FilterBasic::FilterBasic(){
     layout.addComponent(&saturation);
     
     basic.load("shaders/basic/basic");
+    
+    globals = Globals::Instance();
 }
 
 void FilterBasic::process(ofFbo * image){
     
-    ofFbo pass1;
-    pass1.allocate(image->getWidth(), image->getHeight());
+    ofFbo * pass1 = globals->pass1;
     
-    
-    pass1.begin();
+    pass1->begin();
     basic.begin();
     basic.setUniform1f("hue", hue.value);
     basic.setUniform1f("brightness", brightness.value);
@@ -33,10 +33,10 @@ void FilterBasic::process(ofFbo * image){
     basic.setUniform1f("saturation", saturation.value);
     image->draw(0, 0);
     basic.end();
-    pass1.end();
+    pass1->end();
     
     image->begin();
-    pass1.draw(0, 0);
+    pass1->draw(0, 0);
     image->end();
     
 }

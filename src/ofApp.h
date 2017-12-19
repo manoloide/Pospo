@@ -14,6 +14,8 @@
 #include "FilterFilm.h"
 #include "FilterVignette.h"
 
+#include "Globals.h"
+
 #include "UILayout.h"
 #include "UISlider.h"
 
@@ -47,6 +49,8 @@ class ofApp : public ofBaseApp{
     
     bool movedCamera;
     bool viewOriginal;
+    
+    Globals * globals;
     
     ofFbo pospo;
     ofVec3f camera;

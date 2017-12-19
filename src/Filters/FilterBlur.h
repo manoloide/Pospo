@@ -5,7 +5,6 @@
 #include "filter.h"
 #include "UISlider.h"
 
-
 class FilterBlur : public Filter {
 public:
     

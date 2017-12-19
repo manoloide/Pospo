@@ -10,25 +10,25 @@ FilterChromaticAberration::FilterChromaticAberration(){
     layout.addComponent(&chroma);
     
     aberration.load("shaders/aberration/aberration");
+    
+    globals = Globals::Instance();
 }
 
 void FilterChromaticAberration::process(ofFbo * image){
     
-    ofFbo pass1;
-    pass1.allocate(image->getWidth(), image->getHeight());
+    ofFbo * pass1 = globals->pass1;
     
-    
-    pass1.begin();
+    pass1->begin();
     aberration.begin();
     aberration.setUniform2f("resolution", image->getWidth(), image->getHeight());
     aberration.setUniform1f("chroma", chroma.value);
     image->draw(0, 0);
     aberration.end();
-    pass1.end();
+    pass1->end();
     
     
     image->begin();
-    pass1.draw(0, 0);
+    pass1->draw(0, 0);
     image->end();
     
 }

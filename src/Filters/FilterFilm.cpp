@@ -30,14 +30,15 @@ FilterFilm::FilterFilm(){
     layout.addComponent(&strength);
     
     film.load("shaders/film/film");
+    
+    globals = Globals::Instance();
 }
 
 void FilterFilm::process(ofFbo * image){
     
-    ofFbo pass1;
-    pass1.allocate(image->getWidth(), image->getHeight());
+    ofFbo * pass1 = globals->pass1;
     
-    pass1.begin();
+    pass1->begin();
     film.begin();
     film.setUniform3f("color1", r1.value, g1.value, b1.value);
     film.setUniform3f("color2", r2.value, g2.value, b2.value);
@@ -46,11 +47,11 @@ void FilterFilm::process(ofFbo * image){
     film.setUniform1f("strength", strength.value);
     image->draw(0, 0);
     film.end();
-    pass1.end();
+    pass1->end();
     
     
     image->begin();
-    pass1.draw(0, 0);
+    pass1->draw(0, 0);
     image->end();
     
 }

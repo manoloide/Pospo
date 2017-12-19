@@ -12,6 +12,9 @@ void ofApp::setup(){
     images.push_back(initImage);
     pospo.allocate(initImage.getWidth(), initImage.getHeight());
     
+    globals = Globals::Instance();
+    globals->init(&pospo);
+    
     loadPresset();
     process();
 }
@@ -221,6 +224,11 @@ void ofApp::loadPresset(){
         filters.push_back(new FilterLensDistortion());
         filters.push_back(new FilterChromaticAberration());
         filters.push_back(new FilterBlur());
+        filters.push_back(new FilterBloom());
+        filters.push_back(new FilterBloom());
+        filters.push_back(new FilterBloom());
+        filters.push_back(new FilterBloom());
+        filters.push_back(new FilterBloom());
         filters.push_back(new FilterBloom());
         filters.push_back(new FilterVignette());
         filters.push_back(new FilterGrain());

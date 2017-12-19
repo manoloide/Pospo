@@ -20,44 +20,45 @@ FilterBloom::FilterBloom(){
     blurX.load("shaders/blur/blurX");
     blurY.load("shaders/blur/blurY");
     bloom.load("shaders/bloom/bloom");
+    
+    globals = Globals::Instance();
 }
 
 void FilterBloom::process(ofFbo * image){
     
-    ofFbo pass1, pass2, pass3;
-    pass1.allocate(image->getWidth(), image->getHeight());
-    pass2.allocate(image->getWidth(), image->getHeight());
-    pass3.allocate(image->getWidth(), image->getHeight());
+    ofFbo * pass1 = globals->pass1;
+    ofFbo * pass2 = globals->pass2;
+    ofFbo * pass3 = globals->pass3;
     
     
-    pass1.begin();
+    pass1->begin();
     blurX.begin();
     blurX.setUniform1f("blur", size.value);
     image->draw(0, 0);
     blurX.end();
-    pass1.end();
+    pass1->end();
     
-    pass2.begin();
+    pass2->begin();
     blurY.begin();
     blurY.setUniform1f("blur", size.value);
-    pass1.draw(0, 0);
+    pass1->draw(0, 0);
     blurY.end();
-    pass2.end();
+    pass2->end();
     
-    pass3.begin();
+    pass3->begin();
     bloom.begin();
     bloom.setUniform1f("amount", amount.value);
     bloom.setUniform1f("tone", tone.value);
     bloom.setUniform1f("shadows", shadows.value);
     bloom.setUniform1f("highlights", highlights.value);
-    bloom.setUniformTexture("blur", pass2.getTexture(), 1);
+    bloom.setUniformTexture("blur", pass2->getTexture(), 1);
     image->draw(0, 0);
     bloom.end();
-    pass3.end();
+    pass3->end();
     
     
     image->begin();
-    pass3.draw(0, 0);
+    pass3->draw(0, 0);
     image->end();
     
 }
