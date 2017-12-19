@@ -16,26 +16,26 @@
          "hidden" : true,
          "name" : "LENS DISTORTION",
          "values" : {
-            "Barrel" : 1,
+            "Barrel" : 0,
             "Chromatic Aberration" : 0,
             "Chromatic Shift" : 0,
             "Defocus" : 0
          }
       },
       {
-         "enable" : false,
-         "hidden" : true,
+         "enable" : true,
+         "hidden" : false,
          "name" : "CHROMATIC ABERRATION",
          "values" : {
-            "Chroma" : 0
+            "Chroma" : 0.02083333395421505
          }
       },
       {
-         "enable" : false,
+         "enable" : true,
          "hidden" : true,
          "name" : "BLUR",
          "values" : {
-            "Blur amount" : 0
+            "Blur amount" : 0.03333333507180214
          }
       },
       {
@@ -57,7 +57,7 @@
          "values" : {
             "Amount" : 0,
             "Highlights" : 0,
-            "Shadows" : 0,
+            "Shadows" : -1,
             "Size" : 0,
             "Tone" : 0
          }
@@ -116,11 +116,11 @@
          "name" : "VIGNETTE",
          "values" : {
             "Amount" : 0,
-            "Center X" : 0,
+            "Center X" : -0.5,
             "Center Y" : 0,
-            "Form" : 0.5,
+            "Form" : 0,
             "Size" : 1,
-            "Smooth" : 0.4000000059604645
+            "Smooth" : 0.009999999776482582
          }
       },
       {
@@ -129,11 +129,11 @@
          "name" : "GRAIN",
          "values" : {
             "Amount" : 1,
-            "Smooth" : 0.5
+            "Smooth" : 0
          }
       },
       {
-         "enable" : false,
+         "enable" : true,
          "hidden" : true,
          "name" : "FILM",
          "values" : {
@@ -144,7 +144,7 @@
             "Green HighLights" : 0.5,
             "Green Lights" : 0.5,
             "Green Shadows" : 0.5,
-            "Red HighLights" : 0.5,
+            "Red HighLights" : 0.4416666626930237,
             "Red Lights" : 0.5,
             "Red Shadows" : 0.5,
             "Strength" : 1

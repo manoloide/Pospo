@@ -75,12 +75,14 @@ void ofApp::keyPressed(int key){
         if(imageIndex < 0)
             imageIndex = images.size()-1;
         pospo.allocate(images[imageIndex].getWidth(), images[imageIndex].getHeight());
+        globals->init(&pospo);
         process();
     }
     if(key == OF_KEY_RIGHT) {
         imageIndex++;
         imageIndex = imageIndex%images.size();
         pospo.allocate(images[imageIndex].getWidth(), images[imageIndex].getHeight());
+        globals->init(&pospo);
         process();
     }
 }
@@ -110,6 +112,7 @@ void ofApp::mousePressed(int x, int y, int button){
     movedCamera = x<ofGetWidth()-260;
     
     ui.mousePressed(x, y, button);
+    updateUI();
 }
 
 //--------------------------------------------------------------
@@ -168,6 +171,7 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
         imageIndex = images.size();
         images.push_back(aux);
         pospo.allocate(aux.getWidth(), aux.getHeight());
+        globals->init(&pospo);
         
         process();
     }
