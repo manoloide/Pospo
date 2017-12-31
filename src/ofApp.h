@@ -9,6 +9,7 @@
 #include "FilterBloom.h"
 #include "FilterBlur.h"
 #include "FilterChromaticAberration.h"
+#include "FilterGaussianBlur.h"
 #include "FilterGrain.h"
 #include "FilterLensDistortion.h"
 #include "FilterFilm.h"

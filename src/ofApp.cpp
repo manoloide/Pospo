@@ -204,6 +204,9 @@ void ofApp::loadPresset(){
             else if(name == "FILM") {
                 filter = new FilterFilm();
             }
+            else if(name == "GAUSSIAN BLUR"){
+                filter = new FilterGaussianBlur();
+            }
             else if(name == "GRAIN") {
                 filter = new FilterGrain();
             }
@@ -228,11 +231,7 @@ void ofApp::loadPresset(){
         filters.push_back(new FilterLensDistortion());
         filters.push_back(new FilterChromaticAberration());
         filters.push_back(new FilterBlur());
-        filters.push_back(new FilterBloom());
-        filters.push_back(new FilterBloom());
-        filters.push_back(new FilterBloom());
-        filters.push_back(new FilterBloom());
-        filters.push_back(new FilterBloom());
+        filters.push_back(new FilterGaussianBlur());
         filters.push_back(new FilterBloom());
         filters.push_back(new FilterVignette());
         filters.push_back(new FilterGrain());

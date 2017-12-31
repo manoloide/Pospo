@@ -1,18 +1,18 @@
-#ifndef FilterBlur_h
-#define FilterBlur_h
+#ifndef FilterGaussianBlur_h
+#define FilterGaussianBlur_h
 
 #include "ofMain.h"
 #include "filter.h"
 #include "UISlider.h"
 
-class FilterBlur : public Filter {
+class FilterGaussianBlur : public Filter {
 public:
     
-    FilterBlur();
+    FilterGaussianBlur();
     
     void process(ofFbo * image);
     
-    ofShader blurX, blurY;
+    ofShader gaussian;
     UISlider amount;
 };
 
