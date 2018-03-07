@@ -17,6 +17,8 @@ void ofApp::setup(){
     
     loadPresset();
     process();
+    
+    updateUI();
 }
 
 //--------------------------------------------------------------
@@ -60,6 +62,7 @@ void ofApp::keyPressed(int key){
         process();
     }
     if(key == 's') savePresset();
+    if(key == 'l') loadPresset();
     if(key == 'p') process();
     if(key == ' ') viewOriginal = true;
     
@@ -73,7 +76,7 @@ void ofApp::keyPressed(int key){
     if(key == OF_KEY_LEFT){
         imageIndex--;
         if(imageIndex < 0)
-            imageIndex = images.size()-1;
+            imageIndex = (int)images.size()-1;
         pospo.allocate(images[imageIndex].getWidth(), images[imageIndex].getHeight());
         globals->init(&pospo);
         process();

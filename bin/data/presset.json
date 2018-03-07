@@ -1,12 +1,12 @@
 {
    "filters" : [
       {
-         "enable" : true,
-         "hidden" : false,
+         "enable" : false,
+         "hidden" : true,
          "name" : "BASIC",
          "values" : {
-            "Brightness" : 1.075000047683716,
-            "Contrast" : 0.9833333492279053,
+            "Brightness" : 1,
+            "Contrast" : 1,
             "Hue" : 0,
             "Saturation" : 1
          }
@@ -16,18 +16,18 @@
          "hidden" : true,
          "name" : "LENS DISTORTION",
          "values" : {
-            "Barrel" : 1,
+            "Barrel" : 0,
             "Chromatic Aberration" : 0,
-            "Chromatic Shift" : 0,
+            "Chromatic Shift" : -1,
             "Defocus" : 0
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "CHROMATIC ABERRATION",
          "values" : {
-            "Chroma" : 0.02500000037252903
+            "Chroma" : 0
          }
       },
       {
@@ -39,63 +39,63 @@
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "GAUSSIAN BLUR",
          "values" : {
-            "Blur amount" : 0.02500000037252903
+            "Blur amount" : 0
          }
       },
       {
          "enable" : true,
-         "hidden" : true,
+         "hidden" : false,
          "name" : "BLOOM",
          "values" : {
-            "Amount" : 0.2458333373069763,
-            "Highlights" : 0.2333333492279053,
-            "Shadows" : -0.4416666626930237,
-            "Size" : 2.333333253860474,
-            "Tone" : -0.7416666746139526
+            "Amount" : 0.2666666805744171,
+            "Highlights" : 0.2833333015441895,
+            "Shadows" : 0.1499999761581421,
+            "Size" : 1.383333325386047,
+            "Tone" : -0.04166668653488159
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "VIGNETTE",
          "values" : {
-            "Amount" : -0.2583333253860474,
-            "Center X" : 0,
-            "Center Y" : 0,
-            "Form" : 1,
-            "Size" : 1.947916626930237,
-            "Smooth" : 0.7731249928474426
+            "Amount" : -1,
+            "Center X" : -0.5,
+            "Center Y" : -0.5,
+            "Form" : 0,
+            "Size" : 1,
+            "Smooth" : 0.009999999776482582
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "GRAIN",
          "values" : {
-            "Amount" : 0.7975000143051147,
-            "Smooth" : 0.5
+            "Amount" : 0.4000000059604645,
+            "Smooth" : 0
          }
       },
       {
          "enable" : true,
-         "hidden" : true,
+         "hidden" : false,
          "name" : "FILM",
          "values" : {
-            "Blue HighLights" : 0.5,
-            "Blue Lights" : 0.4208333194255829,
-            "Blue Shadows" : 0.9916666746139526,
-            "Faded" : 1,
-            "Green HighLights" : 0.5166666507720947,
-            "Green Lights" : 0.4375,
-            "Green Shadows" : 0.3791666626930237,
-            "Red HighLights" : 0.5083333253860474,
-            "Red Lights" : 0.5,
-            "Red Shadows" : 0.7541666626930237,
-            "Strength" : 1
+            "Blue HighLights" : 0.6583333611488342,
+            "Blue Lights" : 0.6666666865348816,
+            "Blue Shadows" : 0.574999988079071,
+            "Faded" : 0.7041666507720947,
+            "Green HighLights" : 0.5416666865348816,
+            "Green Lights" : 0.6458333134651184,
+            "Green Shadows" : 0.612500011920929,
+            "Red HighLights" : 0.4166666567325592,
+            "Red Lights" : 0.5874999761581421,
+            "Red Shadows" : 0.5416666865348816,
+            "Strength" : 0.8166666626930237
          }
       }
    ]
