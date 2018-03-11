@@ -62,9 +62,5 @@ class ofApp : public ofBaseApp{
     vector<Filter *> filters;
     
     UILayout ui;
-    UISlider s1;
-    UISlider s2;
-    UISlider s3;
-    UISlider s4;
     
 };

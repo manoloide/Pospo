@@ -1,14 +1,14 @@
 {
    "filters" : [
       {
-         "enable" : false,
-         "hidden" : true,
+         "enable" : true,
+         "hidden" : false,
          "name" : "BASIC",
          "values" : {
-            "Brightness" : 1.181818127632141,
-            "Contrast" : 1,
-            "Hue" : 0.5909090638160706,
-            "Saturation" : 1.181818127632141
+            "Brightness" : 1,
+            "Contrast" : 0.9909090995788574,
+            "Hue" : 0,
+            "Saturation" : 1.490909099578857
          }
       },
       {
@@ -16,10 +16,10 @@
          "hidden" : true,
          "name" : "LENS DISTORTION",
          "values" : {
-            "Barrel" : 1.13043475151062,
-            "Chromatic Aberration" : 0.5652173757553101,
-            "Chromatic Shift" : 0.1304347515106201,
-            "Defocus" : 0.5652173757553101
+            "Barrel" : 0.0260869562625885,
+            "Chromatic Aberration" : 0.01304347813129425,
+            "Chromatic Shift" : -0.9739130735397339,
+            "Defocus" : 0.01304347813129425
          }
       },
       {
@@ -43,12 +43,12 @@
          "hidden" : true,
          "name" : "GAUSSIAN BLUR",
          "values" : {
-            "Blur amount" : 1.13043475151062
+            "Blur amount" : 0.0260869562625885
          }
       },
       {
          "enable" : true,
-         "hidden" : false,
+         "hidden" : true,
          "name" : "BLOOM",
          "values" : {
             "Amount" : 0.7869565486907959,
@@ -69,10 +69,10 @@
       },
       {
          "enable" : true,
-         "hidden" : false,
+         "hidden" : true,
          "name" : "VIGNETTE",
          "values" : {
-            "Amount" : -0.5565217733383179,
+            "Amount" : -0.6608695983886719,
             "Center X" : 0,
             "Center Y" : 0,
             "Form" : 1,
@@ -85,17 +85,17 @@
          "hidden" : true,
          "name" : "FILM",
          "values" : {
-            "Blue HighLights" : 0.5652173757553101,
-            "Blue Lights" : 0.5652173757553101,
-            "Blue Shadows" : 0.5652173757553101,
-            "Faded" : 0.5652173757553101,
-            "Green HighLights" : 0.5652173757553101,
-            "Green Lights" : 0.5652173757553101,
-            "Green Shadows" : 0.5652173757553101,
-            "Red HighLights" : 0.5652173757553101,
-            "Red Lights" : 0.5652173757553101,
-            "Red Shadows" : 0.5652173757553101,
-            "Strength" : 0.5652173757553101
+            "Blue HighLights" : 0.5,
+            "Blue Lights" : 0.5,
+            "Blue Shadows" : 0.5,
+            "Faded" : 1,
+            "Green HighLights" : 0.5,
+            "Green Lights" : 0.5,
+            "Green Shadows" : 0.5,
+            "Red HighLights" : 0.5,
+            "Red Lights" : 0.5,
+            "Red Shadows" : 0.5,
+            "Strength" : 1
          }
       }
    ]

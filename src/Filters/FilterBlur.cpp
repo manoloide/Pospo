@@ -6,9 +6,9 @@ FilterBlur::FilterBlur(){
     
     globals = Globals::Instance();
     
-    float ww = globals->menuSize-20;
-    layout.setup(0, 0, globals->menuSize, 60, name);
-    amount.setup(10, 50, ww, 8, 0, 4, 0,  "Blur amount");
+    float ww = globals->menuSize-40;
+    layout.setup(0, 0, globals->menuSize, 90, name);
+    amount.setup(20, 60, ww, 8, 0, 4, 0,  "Blur amount");
     
     
     layout.addComponent(&amount);

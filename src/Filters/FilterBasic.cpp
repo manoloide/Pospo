@@ -7,11 +7,11 @@ FilterBasic::FilterBasic(){
     globals = Globals::Instance();
     
     float ww = globals->menuSize-40;
-    layout.setup(0, 0, globals->menuSize, 150, name);
-    hue.setup(10, 50, ww, 8, 0, 1, 0,  "Hue");
-    brightness.setup(10, 80, ww, 8, 0, 2, 1,  "Brightness");
-    contrast.setup(10, 110, ww, 8, 0, 2, 1,  "Contrast");
-    saturation.setup(10, 140, ww, 8, 0, 2, 1,  "Saturation");
+    layout.setup(0, 0, globals->menuSize, 210, name);
+    hue.setup(20, 60, ww, 10, 0, 1, 0,  "Hue");
+    brightness.setup(20, 100, ww, 10, 0, 2, 1,  "Brightness");
+    contrast.setup(20, 140, ww, 10, 0, 2, 1,  "Contrast");
+    saturation.setup(20, 180, ww, 10, 0, 2, 1,  "Saturation");
     
     layout.addComponent(&hue);
     layout.addComponent(&contrast);

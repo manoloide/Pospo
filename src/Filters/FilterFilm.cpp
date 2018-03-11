@@ -6,19 +6,19 @@ FilterFilm::FilterFilm(){
     
     globals = Globals::Instance();
     
-    float ww = globals->menuSize-20;
-    layout.setup(0, 0, globals->menuSize, 360, name);
-    r1.setup(10, 50, ww, 8, 0.0, 1.0, 0.5,  "Red Shadows");
-    g1.setup(10, 80, ww, 8, 0.0, 1.0, 0.5,  "Green Shadows");
-    b1.setup(10, 110, ww, 8, 0.0, 1.0, 0.5,  "Blue Shadows");
-    r2.setup(10, 140, ww, 8, 0.0, 1.0, 0.5,  "Red Lights");
-    g2.setup(10, 170, ww, 8, 0.0, 1.0, 0.5,  "Green Lights");
-    b2.setup(10, 200, ww, 8, 0.0, 1.0, 0.5,  "Blue Lights");
-    r3.setup(10, 230, ww, 8, 0.0, 1.0, 0.5,  "Red HighLights");
-    g3.setup(10, 260, ww, 8, 0.0, 1.0, 0.5,  "Green HighLights");
-    b3.setup(10, 290, ww, 8, 0.0, 1.0, 0.5,  "Blue HighLights");
-    faded.setup(10, 320, ww, 8, 0.0, 1.0, 1.0,  "Faded");
-    strength.setup(10, 350, ww, 8, 0.0, 1.0, 1.0,  "Strength");
+    float ww = globals->menuSize-40;
+    layout.setup(0, 0, globals->menuSize, 490, name);
+    r1.setup(20, 60, ww, 8, 0.0, 1.0, 0.5,  "Red Shadows");
+    g1.setup(20, 100, ww, 8, 0.0, 1.0, 0.5,  "Green Shadows");
+    b1.setup(20, 140, ww, 8, 0.0, 1.0, 0.5,  "Blue Shadows");
+    r2.setup(20, 180, ww, 8, 0.0, 1.0, 0.5,  "Red Lights");
+    g2.setup(20, 220, ww, 8, 0.0, 1.0, 0.5,  "Green Lights");
+    b2.setup(20, 260, ww, 8, 0.0, 1.0, 0.5,  "Blue Lights");
+    r3.setup(20, 300, ww, 8, 0.0, 1.0, 0.5,  "Red HighLights");
+    g3.setup(20, 340, ww, 8, 0.0, 1.0, 0.5,  "Green HighLights");
+    b3.setup(20, 380, ww, 8, 0.0, 1.0, 0.5,  "Blue HighLights");
+    faded.setup(20, 420, ww, 8, 0.0, 1.0, 1.0,  "Faded");
+    strength.setup(20, 460, ww, 8, 0.0, 1.0, 1.0,  "Strength");
     
     layout.addComponent(&r1);
     layout.addComponent(&g1);

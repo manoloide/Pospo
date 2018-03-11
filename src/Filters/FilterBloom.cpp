@@ -6,13 +6,13 @@ FilterBloom::FilterBloom(){
     
     globals = Globals::Instance();
     
-    float ww = globals->menuSize-20;
-    layout.setup(0, 0, globals->menuSize, 180, name);
-    amount.setup(10, 50, ww, 8, 0, 1, 0,  "Amount");
-    size.setup(10, 80, ww, 8, 0, 4, 0,  "Size");
-    tone.setup(10, 110, ww, 8, -1, 1, 0,  "Tone");
-    shadows.setup(10, 140, ww, 8, -1, 1, 0,  "Shadows");
-    highlights.setup(10, 170, ww, 8, -1, 1, 0,  "Highlights");
+    float ww = globals->menuSize-40;
+    layout.setup(0, 0, globals->menuSize, 250, name);
+    amount.setup(20, 60, ww, 8, 0, 1, 0,  "Amount");
+    size.setup(20, 100, ww, 8, 0, 4, 0,  "Size");
+    tone.setup(20, 140, ww, 8, -1, 1, 0,  "Tone");
+    shadows.setup(20, 180, ww, 8, -1, 1, 0,  "Shadows");
+    highlights.setup(20, 220, ww, 8, -1, 1, 0,  "Highlights");
     
     layout.addComponent(&amount);
     layout.addComponent(&size);

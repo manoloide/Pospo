@@ -6,14 +6,14 @@ FilterVignette::FilterVignette(){
     
     globals = Globals::Instance();
     
-    float ww = globals->menuSize-20;
-    layout.setup(0, 0, globals->menuSize, 210, name);
-    amount.setup(10, 40, ww, 8, -1.0, 1.0, 0.0,  "Amount");
-    form.setup(10, 70, ww, 8, 0, 1, 0.5,  "Form");
-    size.setup(10, 100, ww, 8, 0.5, 3, 1.0,  "Size");
-    smooth.setup(10, 130, ww, 8, 0.01, 1, 0.4,  "Smooth");
-    centerX.setup(10, 160, ww, 8, -0.5, 0.5, 0.0,  "Center X");
-    centerY.setup(10, 190, ww, 8, -0.5, 0.5, 0.0,  "Center Y");
+    float ww = globals->menuSize-40;
+    layout.setup(0, 0, globals->menuSize, 290, name);
+    amount.setup(20, 60, ww, 8, -1.0, 1.0, 0.0,  "Amount");
+    form.setup(20, 100, ww, 8, 0, 1, 0.5,  "Form");
+    size.setup(20, 140, ww, 8, 0.5, 3, 1.0,  "Size");
+    smooth.setup(20, 180, ww, 8, 0.01, 1, 0.4,  "Smooth");
+    centerX.setup(20, 220, ww, 8, -0.5, 0.5, 0.0,  "Center X");
+    centerY.setup(20, 260, ww, 8, -0.5, 0.5, 0.0,  "Center Y");
     
     layout.addComponent(&amount);
     layout.addComponent(&form);
