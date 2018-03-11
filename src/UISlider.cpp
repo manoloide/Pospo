@@ -16,6 +16,7 @@ void UISlider::setup(float _x, float _y, float _w, float _h, float _min, float _
 
 void UISlider::update(){
 }
+
 void UISlider::draw(){
     ofSetColor(60);
     if(on) ofSetColor(70);
@@ -26,7 +27,8 @@ void UISlider::draw(){
     ofDrawRectangle(x, y, w*porc, h);
     
     ofSetColor(255);
-    ofDrawBitmapString(name, x, y-4);
+    font->drawString(name, x, y-4);
+    //ofDrawBitmapString(name, x, y-4);
 }
 
 void UISlider::mousePressed(int mouseX, int mouseY, int button){

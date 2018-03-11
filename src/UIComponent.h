@@ -15,6 +15,8 @@ public:
     
     float x, y, w, h;
     string name;
+    
+    ofTrueTypeFont * font;
 };
 
 #endif

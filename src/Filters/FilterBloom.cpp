@@ -4,12 +4,15 @@ FilterBloom::FilterBloom(){
     
     name = "BLOOM";
     
-    layout.setup(0, 0, 260, 180, name);
-    amount.setup(10, 40, 240, 8, 0, 1, 0,  "Amount");
-    size.setup(10, 70, 240, 8, 0, 4, 0,  "Size");
-    tone.setup(10, 100, 240, 8, -1, 1, 0,  "Tone");
-    shadows.setup(10, 130, 240, 8, -1, 1, 0,  "Shadows");
-    highlights.setup(10, 160, 240, 8, -1, 1, 0,  "Highlights");
+    globals = Globals::Instance();
+    
+    float ww = globals->menuSize-20;
+    layout.setup(0, 0, globals->menuSize, 180, name);
+    amount.setup(10, 50, ww, 8, 0, 1, 0,  "Amount");
+    size.setup(10, 80, ww, 8, 0, 4, 0,  "Size");
+    tone.setup(10, 110, ww, 8, -1, 1, 0,  "Tone");
+    shadows.setup(10, 140, ww, 8, -1, 1, 0,  "Shadows");
+    highlights.setup(10, 170, ww, 8, -1, 1, 0,  "Highlights");
     
     layout.addComponent(&amount);
     layout.addComponent(&size);
@@ -20,8 +23,6 @@ FilterBloom::FilterBloom(){
     blurX.load("shaders/blur/blurX");
     blurY.load("shaders/blur/blurY");
     bloom.load("shaders/bloom/bloom");
-    
-    globals = Globals::Instance();
 }
 
 void FilterBloom::process(ofFbo * image){

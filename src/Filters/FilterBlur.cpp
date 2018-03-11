@@ -4,16 +4,17 @@ FilterBlur::FilterBlur(){
     
     name = "BLUR";
     
-    layout.setup(0, 0, 260, 60, name);
-    amount.setup(10, 40, 240, 8, 0, 4, 0,  "Blur amount");
+    globals = Globals::Instance();
+    
+    float ww = globals->menuSize-20;
+    layout.setup(0, 0, globals->menuSize, 60, name);
+    amount.setup(10, 50, ww, 8, 0, 4, 0,  "Blur amount");
     
     
     layout.addComponent(&amount);
     
     blurX.load("shaders/blur/blurX");
     blurY.load("shaders/blur/blurY");
-    
-    globals = Globals::Instance();
 }
 
 void FilterBlur::process(ofFbo * image){

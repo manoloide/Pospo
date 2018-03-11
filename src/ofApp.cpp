@@ -5,20 +5,20 @@ void ofApp::setup(){
     
     ofSetBackgroundColor(40);
     
-    ui.setup(ofGetWidth()-260, 0, 260, ofGetHeight());
+    globals = Globals::Instance();
+    ui.setup(ofGetWidth()-globals->menuSize, 0, globals->menuSize, ofGetHeight());
     
     ofImage initImage;
     initImage.load("init.jpg");
     images.push_back(initImage);
     pospo.allocate(initImage.getWidth(), initImage.getHeight());
     
-    globals = Globals::Instance();
     globals->init(&pospo);
     
     loadPresset();
-    process();
     
     updateUI();
+    process();
 }
 
 //--------------------------------------------------------------
@@ -29,7 +29,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofPushMatrix();
-    ofTranslate((ofGetWidth()-260)/2, ofGetHeight()/2);
+    ofTranslate((ofGetWidth()-globals->menuSize)/2, ofGetHeight()/2);
     ofTranslate(camera.x, camera.y);
     float sca = pow(1.5, zoom);
     ofScale(sca, sca);
@@ -112,7 +112,7 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-    movedCamera = x<ofGetWidth()-260;
+    movedCamera = x<ofGetWidth()-globals->menuSize;
     
     ui.mousePressed(x, y, button);
     updateUI();
@@ -131,7 +131,7 @@ void ofApp::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseScrolled(int x, int y, float scrollX, float scrollY){
-    float w = ofGetWidth()-260;
+    float w = ofGetWidth()-globals->menuSize;
     float h = ofGetHeight();
     if(x<w) {
         float azoom = zoom;
@@ -157,7 +157,7 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-    ui.setup(ofGetWidth()-260, 0, 260, ofGetHeight());
+    ui.setup(ofGetWidth()-globals->menuSize, 0, globals->menuSize, ofGetHeight());
 }
 
 //--------------------------------------------------------------

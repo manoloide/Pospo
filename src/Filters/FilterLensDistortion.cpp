@@ -4,11 +4,14 @@ FilterLensDistortion::FilterLensDistortion(){
     
     name = "LENS DISTORTION";
     
-    layout.setup(0, 0, 260, 150, name);
-    barrel.setup(10, 40, 240, 8, 0.0, 2.0, 1.0,  "Barrel"); // -2 2
-    shift.setup(10, 70, 240, 8, -1.0, 1.0, 0.0,  "Chromatic Shift");
-    aberration.setup(10, 100, 240, 8, 0, 1.0, 0.0,  "Chromatic Aberration");
-    defocus.setup(10, 130, 240, 8, 0.0, 1.0, 0.0,  "Defocus");
+    globals = Globals::Instance();
+    
+    float ww = globals->menuSize-20;
+    layout.setup(0, 0, globals->menuSize, 150, name);
+    barrel.setup(10, 50, ww, 8, 0.0, 2.0, 1.0,  "Barrel"); // -2 2
+    shift.setup(10, 80, ww, 8, -1.0, 1.0, 0.0,  "Chromatic Shift");
+    aberration.setup(10, 110, ww, 8, 0, 1.0, 0.0,  "Chromatic Aberration");
+    defocus.setup(10, 140, ww, 8, 0.0, 1.0, 0.0,  "Defocus");
     
     layout.addComponent(&barrel);
     layout.addComponent(&shift);
@@ -16,8 +19,6 @@ FilterLensDistortion::FilterLensDistortion(){
     layout.addComponent(&defocus);
     
     lens.load("shaders/lens/lens");
-    
-    globals = Globals::Instance();
 }
 
 void FilterLensDistortion::process(ofFbo * image){

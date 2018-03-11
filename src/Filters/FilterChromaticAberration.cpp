@@ -4,14 +4,15 @@ FilterChromaticAberration::FilterChromaticAberration(){
     
     name = "CHROMATIC ABERRATION";
     
-    layout.setup(0, 0, 260, 60, name);
-    chroma.setup(10, 40, 240, 8, 0, 1, 0,  "Chroma");
+    globals = Globals::Instance();
+    
+    float ww = globals->menuSize-20;
+    layout.setup(0, 0, globals->menuSize, 60, name);
+    chroma.setup(10, 50, ww, 8, 0, 1, 0,  "Chroma");
     
     layout.addComponent(&chroma);
     
     aberration.load("shaders/aberration/aberration");
-    
-    globals = Globals::Instance();
 }
 
 void FilterChromaticAberration::process(ofFbo * image){

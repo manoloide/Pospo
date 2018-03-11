@@ -4,14 +4,16 @@ FilterVignette::FilterVignette(){
     
     name = "VIGNETTE";
     
-    layout.setup(0, 0, 260, 210, name);
-    amount.setup(10, 40, 240, 8, -1.0, 1.0, 0.0,  "Amount");
-    form.setup(10, 70, 240, 8, 0, 1, 0.5,  "Form");
-    size.setup(10, 100, 240, 8, 0.5, 3, 1.0,  "Size");
-    smooth.setup(10, 130, 240, 8, 0.01, 1, 0.4,  "Smooth");
-    centerX.setup(10, 160, 240, 8, -0.5, 0.5, 0.0,  "Center X");
-    centerY.setup(10, 190, 240, 8, -0.5, 0.5, 0.0,  "Center Y");
+    globals = Globals::Instance();
     
+    float ww = globals->menuSize-20;
+    layout.setup(0, 0, globals->menuSize, 210, name);
+    amount.setup(10, 40, ww, 8, -1.0, 1.0, 0.0,  "Amount");
+    form.setup(10, 70, ww, 8, 0, 1, 0.5,  "Form");
+    size.setup(10, 100, ww, 8, 0.5, 3, 1.0,  "Size");
+    smooth.setup(10, 130, ww, 8, 0.01, 1, 0.4,  "Smooth");
+    centerX.setup(10, 160, ww, 8, -0.5, 0.5, 0.0,  "Center X");
+    centerY.setup(10, 190, ww, 8, -0.5, 0.5, 0.0,  "Center Y");
     
     layout.addComponent(&amount);
     layout.addComponent(&form);
@@ -21,8 +23,6 @@ FilterVignette::FilterVignette(){
     layout.addComponent(&centerY);
     
     vignette.load("shaders/vignette/vignette");
-    
-    globals = Globals::Instance();
 }
 
 void FilterVignette::process(ofFbo * image){

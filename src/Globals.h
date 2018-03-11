@@ -16,6 +16,9 @@ public:
     void init(ofFbo * ori);
     
     ofFbo * pass1, * pass2, * pass3;
+    ofTrueTypeFont * uiFontTitle, * uiFontValue;
+    
+    int menuSize = 480;
 protected:
     Globals();
     Globals(const Globals &);

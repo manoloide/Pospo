@@ -1,7 +1,8 @@
 #include "UILayoutFilter.h"
+#include "Globals.h"
 
 UILayoutFilter::UILayoutFilter(){
-    
+    font = Globals::Instance()->uiFontTitle;
 }
 
 void UILayoutFilter::setup(float _x, float _y, float _w, float _h, string _name){
@@ -23,31 +24,37 @@ void UILayoutFilter::update(){
 void UILayoutFilter::draw(){
     ofPushMatrix();
     ofTranslate(x, y);
-    ofSetColor(0);
-    ofDrawRectangle(0, 0, w, 20);
+    ofSetColor(5);
+    ofDrawRectangle(0, 0, w, 30);
     
-    ofSetColor(30);
-    ofDrawRectangle(20, 5, 10, 10);
-    ofDrawRectangle(w-45, 5, 10, 10);
+    ofSetColor(35);
+    ofDrawRectangle(30, 5, 20, 20);
+    //ofDrawRectangle(w-25, 5, 20, 20);
+    //ofDrawRectangle(w-50, 5, 20, 20);
+    ofDrawRectangle(w-75, 5, 20, 20);
     
     ofSetColor(255);
-    ofDrawBitmapString(name, 40, 14);
-    ofDrawBitmapString("r", w-43, 14);
+    //ofDrawBitmapString(name, 40, 14);
+    font->drawString(name, 55, 22);
+    //ofDrawBitmapString("r", w-43, 14);
+    font->drawString("R", w-73, 23);
+    
     
     ofSetColor(120);
     if(hidden)
-        ofDrawTriangle(8, 6, 8, 14, 12, 10);
+        ofDrawTriangle(15-4, 15-5, 15-4, 15+5, 15+4, 15);
     else
-        ofDrawTriangle(6, 8, 14, 8, 10, 12);
+        ofDrawTriangle(15-5, 15-4, 15+5, 15-4, 15, 15+4);
     
-    ofDrawTriangle(w-25-4, 8, w-25+4, 8, w-25, 12);
-    ofDrawTriangle(w-10-4, 12, w-10+4, 12, w-10, 8);
+    ofDrawTriangle(w-40-8, 15-4, w-40+8, 15-4, w-40, 15+4);
+    ofDrawTriangle(w-15-8, 15+4, w-15+8, 15+4, w-15, 15-4);
+     
         
-    if(enable) ofDrawCircle(25, 10, 3);
+    if(enable) ofDrawCircle(40, 15, 5);
     
     if(!hidden){
         ofSetColor(30);
-        ofDrawRectangle(0, 20, w, h-20);
+        ofDrawRectangle(0, 30, w, h-30);
         for(int i = 0; i < components.size(); i++){
             components[i]->draw();
         }
@@ -59,12 +66,12 @@ void UILayoutFilter::mousePressed(int mouseX, int mouseY, int button){
     float mx = mouseX-x;
     float my = mouseY-y;
     
-    if(my >= 5 && my <= 15){
-        if(mx >= 5 && mx < 15) hidden = !hidden;
-        if(mx >= 20 && mx < 30) enable = !enable;
-        if(mx >= w-45 && mx < w-35) randValue();
-        if(mx >= w-30 && mx < w-20) toDown = true;
-        if(mx >= w-15 && mx < w-5) toUp = true;
+    if(my >= 5 && my <= 25){
+        if(mx >= 5 && mx < 25) hidden = !hidden;
+        if(mx >= 30 && mx < 50) enable = !enable;
+        if(mx >= w-75 && mx < w-55) randValue();
+        if(mx >= w-50 && mx < w-30) toDown = true;
+        if(mx >= w-25 && mx < w-5) toUp = true;
     }
     
     if(hidden) return;
@@ -109,7 +116,7 @@ void UILayoutFilter::clear() {
 }
 
 float UILayoutFilter::getHeight() {
-    if(hidden) return 20;
+    if(hidden) return 30;
     return h;
 }
 

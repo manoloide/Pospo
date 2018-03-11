@@ -1,15 +1,17 @@
 #include "FilterBasic.h"
-
 #include "FilterBlur.h"
 
 FilterBasic::FilterBasic(){
     name = "BASIC";
     
-    layout.setup(0, 0, 260, 150, name);
-    hue.setup(10, 40, 240, 8, 0, 1, 0,  "Hue");
-    brightness.setup(10, 70, 240, 8, 0, 2, 1,  "Brightness");
-    contrast.setup(10, 100, 240, 8, 0, 2, 1,  "Contrast");
-    saturation.setup(10, 130, 240, 8, 0, 2, 1,  "Saturation");
+    globals = Globals::Instance();
+    
+    float ww = globals->menuSize-40;
+    layout.setup(0, 0, globals->menuSize, 150, name);
+    hue.setup(10, 50, ww, 8, 0, 1, 0,  "Hue");
+    brightness.setup(10, 80, ww, 8, 0, 2, 1,  "Brightness");
+    contrast.setup(10, 110, ww, 8, 0, 2, 1,  "Contrast");
+    saturation.setup(10, 140, ww, 8, 0, 2, 1,  "Saturation");
     
     layout.addComponent(&hue);
     layout.addComponent(&contrast);
@@ -17,8 +19,6 @@ FilterBasic::FilterBasic(){
     layout.addComponent(&saturation);
     
     basic.load("shaders/basic/basic");
-    
-    globals = Globals::Instance();
 }
 
 void FilterBasic::process(ofFbo * image){

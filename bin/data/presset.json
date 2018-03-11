@@ -5,10 +5,10 @@
          "hidden" : true,
          "name" : "BASIC",
          "values" : {
-            "Brightness" : 1,
+            "Brightness" : 1.181818127632141,
             "Contrast" : 1,
-            "Hue" : 0,
-            "Saturation" : 1
+            "Hue" : 0.5909090638160706,
+            "Saturation" : 1.181818127632141
          }
       },
       {
@@ -16,10 +16,10 @@
          "hidden" : true,
          "name" : "LENS DISTORTION",
          "values" : {
-            "Barrel" : 0,
-            "Chromatic Aberration" : 0,
-            "Chromatic Shift" : -1,
-            "Defocus" : 0
+            "Barrel" : 1.13043475151062,
+            "Chromatic Aberration" : 0.5652173757553101,
+            "Chromatic Shift" : 0.1304347515106201,
+            "Defocus" : 0.5652173757553101
          }
       },
       {
@@ -27,7 +27,7 @@
          "hidden" : true,
          "name" : "CHROMATIC ABERRATION",
          "values" : {
-            "Chroma" : 0
+            "Chroma" : 0.5652173757553101
          }
       },
       {
@@ -35,7 +35,7 @@
          "hidden" : true,
          "name" : "BLUR",
          "values" : {
-            "Blur amount" : 0
+            "Blur amount" : 0.03478260710835457
          }
       },
       {
@@ -43,7 +43,7 @@
          "hidden" : true,
          "name" : "GAUSSIAN BLUR",
          "values" : {
-            "Blur amount" : 0
+            "Blur amount" : 1.13043475151062
          }
       },
       {
@@ -51,51 +51,51 @@
          "hidden" : false,
          "name" : "BLOOM",
          "values" : {
-            "Amount" : 0.2666666805744171,
-            "Highlights" : 0.2833333015441895,
-            "Shadows" : 0.1499999761581421,
-            "Size" : 1.383333325386047,
-            "Tone" : -0.04166668653488159
+            "Amount" : 0.7869565486907959,
+            "Highlights" : -0.04347825050354004,
+            "Shadows" : -0.560869574546814,
+            "Size" : 2.660869598388672,
+            "Tone" : 0.07826089859008789
          }
       },
       {
-         "enable" : false,
-         "hidden" : true,
-         "name" : "VIGNETTE",
-         "values" : {
-            "Amount" : -1,
-            "Center X" : -0.5,
-            "Center Y" : -0.5,
-            "Form" : 0,
-            "Size" : 1,
-            "Smooth" : 0.009999999776482582
-         }
-      },
-      {
-         "enable" : false,
-         "hidden" : true,
+         "enable" : true,
+         "hidden" : false,
          "name" : "GRAIN",
          "values" : {
-            "Amount" : 0.4000000059604645,
+            "Amount" : 0.7482608556747437,
             "Smooth" : 0
          }
       },
       {
          "enable" : true,
          "hidden" : false,
+         "name" : "VIGNETTE",
+         "values" : {
+            "Amount" : -0.5565217733383179,
+            "Center X" : 0,
+            "Center Y" : 0,
+            "Form" : 1,
+            "Size" : 1.70108699798584,
+            "Smooth" : 0.8256738781929016
+         }
+      },
+      {
+         "enable" : true,
+         "hidden" : true,
          "name" : "FILM",
          "values" : {
-            "Blue HighLights" : 0.6583333611488342,
-            "Blue Lights" : 0.6666666865348816,
-            "Blue Shadows" : 0.574999988079071,
-            "Faded" : 0.7041666507720947,
-            "Green HighLights" : 0.5416666865348816,
-            "Green Lights" : 0.6458333134651184,
-            "Green Shadows" : 0.612500011920929,
-            "Red HighLights" : 0.4166666567325592,
-            "Red Lights" : 0.5874999761581421,
-            "Red Shadows" : 0.5416666865348816,
-            "Strength" : 0.8166666626930237
+            "Blue HighLights" : 0.5652173757553101,
+            "Blue Lights" : 0.5652173757553101,
+            "Blue Shadows" : 0.5652173757553101,
+            "Faded" : 0.5652173757553101,
+            "Green HighLights" : 0.5652173757553101,
+            "Green Lights" : 0.5652173757553101,
+            "Green Shadows" : 0.5652173757553101,
+            "Red HighLights" : 0.5652173757553101,
+            "Red Lights" : 0.5652173757553101,
+            "Red Shadows" : 0.5652173757553101,
+            "Strength" : 0.5652173757553101
          }
       }
    ]

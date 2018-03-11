@@ -4,15 +4,16 @@ FilterGaussianBlur::FilterGaussianBlur(){
     
     name = "GAUSSIAN BLUR";
     
-    layout.setup(0, 0, 260, 60, name);
-    amount.setup(10, 40, 240, 8, 0, 2, 0,  "Blur amount");
+    globals = Globals::Instance();
+    
+    float ww = globals->menuSize-20;
+    layout.setup(0, 0, globals->menuSize, 60, name);
+    amount.setup(10, 50, ww, 8, 0, 2, 0,  "Blur amount");
     
     
     layout.addComponent(&amount);
     
     gaussian.load("shaders/gaussianblur/gaussianblur");
-    
-    globals = Globals::Instance();
 }
 
 void FilterGaussianBlur::process(ofFbo * image){

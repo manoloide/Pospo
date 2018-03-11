@@ -2,7 +2,7 @@
 
 Globals* Globals::instance = 0;
 
-Globals* Globals::Instance () {
+Globals* Globals::Instance() {
     if (instance == 0) {
         instance = new Globals;
     }
@@ -14,6 +14,11 @@ Globals::Globals() {
     pass1 = new ofFbo();
     pass2 = new ofFbo();
     pass3 = new ofFbo();
+    
+    uiFontTitle = new ofTrueTypeFont();
+    uiFontTitle->load("Chivo-Regular.otf", 18, true);
+    uiFontValue = new ofTrueTypeFont();
+    uiFontValue->load("Chivo-Regular.otf", 16, true);
 }
 
 void Globals::init(ofFbo * ori){

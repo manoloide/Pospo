@@ -5,16 +5,17 @@ FilterGrain::FilterGrain(){
     
     name = "GRAIN";
     
-    layout.setup(0, 0, 260, 100, name);
-    amount.setup(10, 40, 240, 8, 0.4, 1.0, 1.0,  "Amount");
-    smooth.setup(10, 70, 240, 8, 0, 1, 0.5,  "Smooth");
+    globals = Globals::Instance();
+    
+    float ww = globals->menuSize-20;
+    layout.setup(0, 0, globals->menuSize, 100, name);
+    amount.setup(10, 50, ww, 8, 0.4, 1.0, 1.0,  "Amount");
+    smooth.setup(10, 80, ww, 8, 0, 1, 0.5,  "Smooth");
     
     layout.addComponent(&amount);
     layout.addComponent(&smooth);
     
     grain.load("shaders/grain/grain");
-    
-    globals = Globals::Instance();
 }
 
 void FilterGrain::process(ofFbo * image){
