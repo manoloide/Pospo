@@ -8,7 +8,7 @@ FilterChromaticAberration::FilterChromaticAberration(){
     
     float ww = globals->menuSize-40;
     layout.setup(0, 0, globals->menuSize, 90, name);
-    chroma.setup(20, 60, ww, 8, 0, 1, 0,  "Chroma");
+    chroma.setup(20, 60, ww, 10, 0, 1, 0,  "Chroma");
     
     layout.addComponent(&chroma);
     

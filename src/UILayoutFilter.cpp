@@ -61,7 +61,11 @@ void UILayoutFilter::draw(){
     }
     ofPopMatrix();
 }
-
+void UILayoutFilter::mouseMoved(int mouseX, int mouseY){
+    for(int i = 0; i < components.size(); i++){
+        components[i]->mouseMoved(mouseX-x, mouseY-y);
+    }
+}
 void UILayoutFilter::mousePressed(int mouseX, int mouseY, int button){
     float mx = mouseX-x;
     float my = mouseY-y;

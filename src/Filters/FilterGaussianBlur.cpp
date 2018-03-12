@@ -8,7 +8,7 @@ FilterGaussianBlur::FilterGaussianBlur(){
     
     float ww = globals->menuSize-40;
     layout.setup(0, 0, globals->menuSize, 90, name);
-    amount.setup(20, 60, ww, 8, 0, 2, 0,  "Blur amount");
+    amount.setup(20, 60, ww, 10, 0, 2, 0,  "Blur amount");
     
     
     layout.addComponent(&amount);

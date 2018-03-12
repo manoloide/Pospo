@@ -31,6 +31,11 @@ void UISlider::draw(){
     //ofDrawBitmapString(name, x, y-4);
 }
 
+void UISlider::mouseMoved(int mouseX, int mouseY){
+    on = (mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
+    dragged = on;
+}
+
 void UISlider::mousePressed(int mouseX, int mouseY, int button){
     on = (mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
     dragged = on;

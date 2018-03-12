@@ -27,6 +27,12 @@ void UILayout::draw(){
     ofPopMatrix();
 }
 
+void UILayout::mouseMoved(int mouseX, int mouseY){
+    for(int i = 0; i < components.size(); i++){
+        components[i]->mouseMoved(mouseX-x, mouseY-y);
+    }
+}
+
 void UILayout::mousePressed(int mouseX, int mouseY, int button){
     for(int i = 0; i < components.size(); i++){
         components[i]->mousePressed(mouseX-x, mouseY-y, button);

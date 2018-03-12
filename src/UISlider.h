@@ -14,6 +14,7 @@ public:
     void update() override;
     void draw() override;
     
+    void mouseMoved(int mouseX, int mouseY) override;
     void mousePressed(int mouseX, int mouseY, int button) override;
     void mouseDragged(int mouseX, int mouseY) override;
     void mouseReleased(int mouseX, int mouseY) override;

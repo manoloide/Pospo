@@ -13,13 +13,13 @@
       },
       {
          "enable" : false,
-         "hidden" : true,
+         "hidden" : false,
          "name" : "LENS DISTORTION",
          "values" : {
-            "Barrel" : 0.0260869562625885,
-            "Chromatic Aberration" : 0.01304347813129425,
-            "Chromatic Shift" : -0.9739130735397339,
-            "Defocus" : 0.01304347813129425
+            "Barrel" : 1,
+            "Chromatic Aberration" : 0,
+            "Chromatic Shift" : 0,
+            "Defocus" : 0
          }
       },
       {

@@ -97,7 +97,7 @@ void ofApp::keyReleased(int key){
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-
+    ui.mouseMoved(x, y);
 }
 
 //--------------------------------------------------------------
@@ -106,8 +106,9 @@ void ofApp::mouseDragged(int x, int y, int button){
         camera.x += mouseX-ofGetPreviousMouseX();
         camera.y += mouseY-ofGetPreviousMouseY();
     }
-    
-    ui.mouseDragged(x, y);
+    else {
+        ui.mouseDragged(x, y);
+    }
 }
 
 //--------------------------------------------------------------

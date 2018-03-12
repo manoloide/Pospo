@@ -8,10 +8,10 @@ FilterLensDistortion::FilterLensDistortion(){
     
     float ww = globals->menuSize-40;
     layout.setup(0, 0, globals->menuSize, 210, name);
-    barrel.setup(20, 60, ww, 8, 0.0, 2.0, 1.0,  "Barrel"); // -2 2
-    shift.setup(20, 100, ww, 8, -1.0, 1.0, 0.0,  "Chromatic Shift");
-    aberration.setup(20, 140, ww, 8, 0, 1.0, 0.0,  "Chromatic Aberration");
-    defocus.setup(20, 180, ww, 8, 0.0, 1.0, 0.0,  "Defocus");
+    barrel.setup(20, 60, ww, 10, 0.0, 2.0, 1.0,  "Barrel"); // -2 2
+    shift.setup(20, 100, ww, 10, -1.0, 1.0, 0.0,  "Chromatic Shift");
+    aberration.setup(20, 140, ww, 10, 0, 1.0, 0.0,  "Chromatic Aberration");
+    defocus.setup(20, 180, ww, 10, 0.0, 1.0, 0.0,  "Defocus");
     
     layout.addComponent(&barrel);
     layout.addComponent(&shift);
