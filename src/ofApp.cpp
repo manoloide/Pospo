@@ -8,10 +8,9 @@ void ofApp::setup(){
     globals = Globals::Instance();
     ui.setup(ofGetWidth()-globals->menuSize, 0, globals->menuSize, ofGetHeight());
     
-    ofImage initImage;
-    initImage.load("init.jpg");
+    Image initImage("init.jpg");
     images.push_back(initImage);
-    pospo.allocate(initImage.getWidth(), initImage.getHeight());
+    pospo.allocate(initImage.image.getWidth(), initImage.image.getHeight());
     
     globals->init(&pospo);
     
@@ -37,8 +36,8 @@ void ofApp::draw(){
     ofDrawRectangle(-2, -2, 4, 4);
     ofSetColor(255);
     if(viewOriginal) {
-        if(images[imageIndex].isAllocated())
-            images[imageIndex].draw(images[imageIndex].getWidth()*-0.5, images[imageIndex].getHeight()*-0.5);
+        if(images[imageIndex].image.isAllocated())
+            images[imageIndex].image.draw(images[imageIndex].image.getWidth()*-0.5, images[imageIndex].image.getHeight()*-0.5);
     }
     else {
         if(pospo.isAllocated())
@@ -66,6 +65,17 @@ void ofApp::keyPressed(int key){
     if(key == 'p') process();
     if(key == ' ') viewOriginal = true;
     
+    
+    //this is a bug
+    if(ofGetKeyPressed(OF_KEY_LEFT_COMMAND)){
+        if(key == 's') {
+            ofPixels pixels;
+            pospo.readToPixels(pixels);
+            string name = images[imageIndex].getSavePathName();
+            ofSaveImage(pixels, name);
+        }
+    }
+    
     if(key == 'h') {
         for(int i = 0; i < filters.size(); i++){
             filters[i]->layout.hidden = true;
@@ -77,14 +87,14 @@ void ofApp::keyPressed(int key){
         imageIndex--;
         if(imageIndex < 0)
             imageIndex = (int)images.size()-1;
-        pospo.allocate(images[imageIndex].getWidth(), images[imageIndex].getHeight());
+        pospo.allocate(images[imageIndex].image.getWidth(), images[imageIndex].image.getHeight());
         globals->init(&pospo);
         process();
     }
     if(key == OF_KEY_RIGHT) {
         imageIndex++;
         imageIndex = imageIndex%images.size();
-        pospo.allocate(images[imageIndex].getWidth(), images[imageIndex].getHeight());
+        pospo.allocate(images[imageIndex].image.getWidth(), images[imageIndex].image.getHeight());
         globals->init(&pospo);
         process();
     }
@@ -168,13 +178,12 @@ void ofApp::gotMessage(ofMessage msg){
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){
-    ofImage aux;
-    aux.load(dragInfo.files[0]);
+    Image aux(dragInfo.files[0]);
     
-    if(aux.isAllocated()){
-        imageIndex = images.size();
+    if(aux.image.isAllocated()){
+        imageIndex = (int) images.size();
         images.push_back(aux);
-        pospo.allocate(aux.getWidth(), aux.getHeight());
+        pospo.allocate(aux.image.getWidth(), aux.image.getHeight());
         globals->init(&pospo);
         
         process();
@@ -303,7 +312,7 @@ void ofApp::updateUI(){
 void ofApp::process(){
     ofSetColor(255);
     pospo.begin();
-    images[imageIndex].draw(0, 0);
+    images[imageIndex].image.draw(0, 0);
     pospo.end();
     for(int i = 0; i < filters.size(); i++) {
         if(filters[i]->getEnable()) filters[i]->process(&pospo);

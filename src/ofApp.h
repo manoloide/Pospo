@@ -16,6 +16,7 @@
 #include "FilterVignette.h"
 
 #include "Globals.h"
+#include "Image.h"
 
 #include "UILayout.h"
 #include "UISlider.h"
@@ -58,7 +59,7 @@ class ofApp : public ofBaseApp{
     float zoom;
     
     int imageIndex = 0;
-    vector<ofImage> images;
+    vector<Image> images;
     vector<Filter *> filters;
     
     UILayout ui;
