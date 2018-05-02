@@ -40,27 +40,27 @@
       },
       {
          "enable" : false,
-         "hidden" : true,
+         "hidden" : false,
          "name" : "GAUSSIAN BLUR",
          "values" : {
-            "Blur amount" : 0.09545454382896423
-         }
-      },
-      {
-         "enable" : true,
-         "hidden" : true,
-         "name" : "BLOOM",
-         "values" : {
-            "Amount" : 0.7869565486907959,
-            "Highlights" : -0.04347825050354004,
-            "Shadows" : -0.560869574546814,
-            "Size" : 2.660869598388672,
-            "Tone" : 0.07826089859008789
+            "Blur amount" : 0.036363635212183
          }
       },
       {
          "enable" : true,
          "hidden" : false,
+         "name" : "BLOOM",
+         "values" : {
+            "Amount" : 0.4068181812763214,
+            "Highlights" : 0.6045454740524292,
+            "Shadows" : -0.4863636493682861,
+            "Size" : 0.9227272868156433,
+            "Tone" : 0.3045454025268555
+         }
+      },
+      {
+         "enable" : false,
+         "hidden" : true,
          "name" : "GRAIN",
          "values" : {
             "Amount" : 0.7482608556747437,
@@ -68,7 +68,7 @@
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "VIGNETTE",
          "values" : {
@@ -81,7 +81,7 @@
          }
       },
       {
-         "enable" : true,
+         "enable" : false,
          "hidden" : true,
          "name" : "FILM",
          "values" : {

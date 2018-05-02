@@ -8,7 +8,7 @@ FilterGaussianBlur::FilterGaussianBlur(){
     
     float ww = globals->menuSize-40;
     layout.setup(0, 0, globals->menuSize, 90, name);
-    amount.setup(20, 60, ww, 10, 0, 2, 0,  "Blur amount");
+    amount.setup(20, 60, ww, 10, 0, 1, 0,  "Blur amount");
     
     
     layout.addComponent(&amount);
@@ -30,7 +30,7 @@ void FilterGaussianBlur::process(ofFbo * image){
     
     int inter = 8;
     for(int i = 0; i < inter; i++){
-        float radius = (inter-i-1)*amount.value;
+        float radius = (inter/2-i/2)*amount.value*2;
         pass1->begin();
         gaussian.begin();
         if(i%2 == 0) gaussian.setUniform2f("direction", radius, 0.0);

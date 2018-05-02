@@ -12,7 +12,7 @@ public:
 
     void process(ofFbo * image);
     
-    ofShader blurX, blurY, bloom;
+    ofShader gaussian, bloom;
     UISlider amount, size, tone, shadows, highlights;
 };
 
