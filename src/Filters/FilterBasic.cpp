@@ -7,13 +7,11 @@ FilterBasic::FilterBasic(){
     globals = Globals::Instance();
     
     float ww = globals->menuSize-40;
-    layout.setup(0, 0, globals->menuSize, 210, name);
-    hue.setup(20, 60, ww, 10, 0, 1, 0,  "Hue");
-    brightness.setup(20, 100, ww, 10, 0, 2, 1,  "Brightness");
-    contrast.setup(20, 140, ww, 10, 0, 2, 1,  "Contrast");
-    saturation.setup(20, 180, ww, 10, 0, 2, 1,  "Saturation");
-    
-    layout.addComponent(&hue);
+    layout.setup(0, 0, globals->menuSize, 170, name);
+    brightness.setup(20, 60, ww, 10, 0, 2, 1,  "Brightness");
+    contrast.setup(20, 100, ww, 10, 0, 2, 1,  "Contrast");
+    saturation.setup(20, 140, ww, 10, 0, 2, 1,  "Saturation");
+
     layout.addComponent(&contrast);
     layout.addComponent(&brightness);
     layout.addComponent(&saturation);
@@ -27,7 +25,6 @@ void FilterBasic::process(ofFbo * image){
     
     pass1->begin();
     basic.begin();
-    basic.setUniform1f("hue", hue.value);
     basic.setUniform1f("brightness", brightness.value);
     basic.setUniform1f("contrast", contrast.value);
     basic.setUniform1f("saturation", saturation.value);

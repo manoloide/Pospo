@@ -223,6 +223,9 @@ void ofApp::loadPresset(){
             else if(name == "GRAIN") {
                 filter = new FilterGrain();
             }
+            else if(name == "HUE") {
+                filter = new FilterHue();
+            }
             else if(name == "LENS DISTORTION") {
                 filter = new FilterLensDistortion();
             }
@@ -240,6 +243,7 @@ void ofApp::loadPresset(){
     else {
         cout << "load presset fail" << endl;
         
+        filters.push_back(new FilterHue());
         filters.push_back(new FilterBasic());
         filters.push_back(new FilterLensDistortion());
         filters.push_back(new FilterChromaticAberration());

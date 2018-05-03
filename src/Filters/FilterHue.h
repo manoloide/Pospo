@@ -1,19 +1,20 @@
-#ifndef FilterBasic_h
-#define FilterBasic_h
+#ifndef FilterHue_h
+#define FilterHue_h
 
 #include "ofMain.h"
 #include "filter.h"
 #include "UISlider.h"
 
-class FilterBasic : public Filter {
+class FilterHue : public Filter {
 public:
     
-    FilterBasic();
+    FilterHue();
     
     void process(ofFbo * image);
     
     ofShader basic;
-    UISlider contrast, brightness, saturation;
+    UISlider hue;
 };
 
 #endif
+

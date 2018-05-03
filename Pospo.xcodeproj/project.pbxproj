@@ -16,6 +16,7 @@
 		748DD041DC803F02F2961FA1 /* FilterGrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD91C99D65F0E08A23D78315 /* FilterGrain.cpp */; };
 		930496F0207F48EB00412DDC /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930496EE207F48EB00412DDC /* Image.cpp */; };
 		93BED7771FF8A02B005C2E44 /* FilterGaussianBlur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93BED7751FF8A02B005C2E44 /* FilterGaussianBlur.cpp */; };
+		93D481E1209B932200C04B49 /* FilterHue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93D481DF209B932200C04B49 /* FilterHue.cpp */; };
 		A3014FEF2960ED6B8350F4DC /* FilterBloom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802393821546E907E671A2CA /* FilterBloom.cpp */; };
 		A739838C9E11E6AE1D59992A /* FilterBasic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6E2EED8389A8B6C9E566D66 /* FilterBasic.cpp */; };
 		BEDFEE7400C58EA4E412B757 /* ofxJSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2B099E6BD1199664C48B177 /* ofxJSONElement.cpp */; };
@@ -82,6 +83,8 @@
 		930496EF207F48EB00412DDC /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		93BED7751FF8A02B005C2E44 /* FilterGaussianBlur.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FilterGaussianBlur.cpp; path = Filters/FilterGaussianBlur.cpp; sourceTree = "<group>"; };
 		93BED7761FF8A02B005C2E44 /* FilterGaussianBlur.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FilterGaussianBlur.h; path = Filters/FilterGaussianBlur.h; sourceTree = "<group>"; };
+		93D481DF209B932200C04B49 /* FilterHue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FilterHue.cpp; path = Filters/FilterHue.cpp; sourceTree = "<group>"; };
+		93D481E0209B932200C04B49 /* FilterHue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FilterHue.h; path = Filters/FilterHue.h; sourceTree = "<group>"; };
 		94BEE23B773D65843803C462 /* filter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = filter.h; path = src/filter.h; sourceTree = SOURCE_ROOT; };
 		9D6E8A8AABF45023A89537B1 /* Globals.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Globals.cpp; path = src/Globals.cpp; sourceTree = SOURCE_ROOT; };
 		AC8C10553EC4C9BCD0B889CE /* UILayout.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = UILayout.cpp; path = src/UILayout.cpp; sourceTree = SOURCE_ROOT; };
@@ -134,6 +137,8 @@
 				B4F93A5B7C8641BDCCD8F9F0 /* FilterFilm.h */,
 				CD91C99D65F0E08A23D78315 /* FilterGrain.cpp */,
 				802BA1D5628DC446148D794F /* FilterGrain.h */,
+				93D481DF209B932200C04B49 /* FilterHue.cpp */,
+				93D481E0209B932200C04B49 /* FilterHue.h */,
 				13C270CB85E1D678DE519936 /* FilterLensDistortion.cpp */,
 				CD5353CF661BD905AC497590 /* FilterLensDistortion.h */,
 				56E4C83AE225A6524B870427 /* FilterVignette.cpp */,
@@ -364,6 +369,7 @@
 				A739838C9E11E6AE1D59992A /* FilterBasic.cpp in Sources */,
 				A3014FEF2960ED6B8350F4DC /* FilterBloom.cpp in Sources */,
 				5EC01CFD3F2F8630FBE26360 /* FilterBlur.cpp in Sources */,
+				93D481E1209B932200C04B49 /* FilterHue.cpp in Sources */,
 				5FBD2CD64175A5138EC1441D /* FilterChromaticAberration.cpp in Sources */,
 				93BED7771FF8A02B005C2E44 /* FilterGaussianBlur.cpp in Sources */,
 				EFFF396603F485F355DB8498 /* FilterFilm.cpp in Sources */,

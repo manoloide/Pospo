@@ -11,6 +11,7 @@
 #include "FilterChromaticAberration.h"
 #include "FilterGaussianBlur.h"
 #include "FilterGrain.h"
+#include "FilterHue.h"
 #include "FilterLensDistortion.h"
 #include "FilterFilm.h"
 #include "FilterVignette.h"
