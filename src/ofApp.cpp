@@ -178,14 +178,24 @@ void ofApp::gotMessage(ofMessage msg){
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){
-    Image aux(dragInfo.files[0]);
     
-    if(aux.image.isAllocated()){
-        imageIndex = (int) images.size();
-        images.push_back(aux);
-        pospo.allocate(aux.image.getWidth(), aux.image.getHeight());
+    
+    int init = (int)images.size();
+    bool add = false;
+    
+    for(int i = 0; i < dragInfo.files.size(); i++){
+        Image aux(dragInfo.files[i]);
+        if(aux.image.isAllocated()){
+            imageIndex = (int) images.size();
+            images.push_back(aux);
+            add = true;
+        }
+    }
+    
+    if(add) {
+        imageIndex = init;
+        pospo.allocate(images[imageIndex].image.getWidth(), images[imageIndex].image.getHeight());
         globals->init(&pospo);
-        
         process();
     }
 }
