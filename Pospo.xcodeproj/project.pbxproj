@@ -15,6 +15,7 @@
 		5FBD2CD64175A5138EC1441D /* FilterChromaticAberration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B9713A01BF4AA18080B11A2 /* FilterChromaticAberration.cpp */; };
 		748DD041DC803F02F2961FA1 /* FilterGrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD91C99D65F0E08A23D78315 /* FilterGrain.cpp */; };
 		930496F0207F48EB00412DDC /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930496EE207F48EB00412DDC /* Image.cpp */; };
+		938F328B20A38A5800A70AA5 /* UIBotton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 938F328920A38A5800A70AA5 /* UIBotton.cpp */; };
 		93BED7771FF8A02B005C2E44 /* FilterGaussianBlur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93BED7751FF8A02B005C2E44 /* FilterGaussianBlur.cpp */; };
 		93D481E1209B932200C04B49 /* FilterHue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93D481DF209B932200C04B49 /* FilterHue.cpp */; };
 		A3014FEF2960ED6B8350F4DC /* FilterBloom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802393821546E907E671A2CA /* FilterBloom.cpp */; };
@@ -81,6 +82,8 @@
 		84EC0E65390C15BB02ACB248 /* FilterFilm.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = FilterFilm.cpp; path = src/Filters/FilterFilm.cpp; sourceTree = SOURCE_ROOT; };
 		930496EE207F48EB00412DDC /* Image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
 		930496EF207F48EB00412DDC /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		938F328920A38A5800A70AA5 /* UIBotton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UIBotton.cpp; path = Filters/UIBotton.cpp; sourceTree = "<group>"; };
+		938F328A20A38A5800A70AA5 /* UIBotton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UIBotton.h; path = Filters/UIBotton.h; sourceTree = "<group>"; };
 		93BED7751FF8A02B005C2E44 /* FilterGaussianBlur.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FilterGaussianBlur.cpp; path = Filters/FilterGaussianBlur.cpp; sourceTree = "<group>"; };
 		93BED7761FF8A02B005C2E44 /* FilterGaussianBlur.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FilterGaussianBlur.h; path = Filters/FilterGaussianBlur.h; sourceTree = "<group>"; };
 		93D481DF209B932200C04B49 /* FilterHue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FilterHue.cpp; path = Filters/FilterHue.cpp; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				DEA19EE8D923A30BA4B6CA2A /* UILayout.h */,
 				FAEAB5149FA31D9D29C4F885 /* UILayoutFilter.cpp */,
 				C87D1425D7EDD77DD9DF3637 /* UILayoutFilter.h */,
+				938F328920A38A5800A70AA5 /* UIBotton.cpp */,
+				938F328A20A38A5800A70AA5 /* UIBotton.h */,
 				02C66339DBC3AD07327EFA42 /* UISlider.cpp */,
 				7EFC283836358750D3342440 /* UISlider.h */,
 				D3E68FD37888C8244DA7F59C /* UIValue.h */,
@@ -377,6 +382,7 @@
 				0C3FE4A021D4EC20C9FF8213 /* FilterLensDistortion.cpp in Sources */,
 				C012913ACBABBA6F8B4BBCE5 /* FilterVignette.cpp in Sources */,
 				432C3F78A0E9FDE157A1DC91 /* Globals.cpp in Sources */,
+				938F328B20A38A5800A70AA5 /* UIBotton.cpp in Sources */,
 				507C086959EA0F3C672F605C /* UILayout.cpp in Sources */,
 				0F354961DBD331F8F410F2C1 /* UILayoutFilter.cpp in Sources */,
 				DF44E69C84B6FA0FCB9E3D0D /* UISlider.cpp in Sources */,

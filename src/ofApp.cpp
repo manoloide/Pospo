@@ -6,7 +6,8 @@ void ofApp::setup(){
     ofSetBackgroundColor(40);
     
     globals = Globals::Instance();
-    ui.setup(ofGetWidth()-globals->menuSize, 0, globals->menuSize, ofGetHeight());
+    
+    createUI();
     
     Image initImage("init.jpg");
     images.push_back(initImage);
@@ -22,7 +23,8 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    ui.update();
+    uiFilter.update();
+    uiOptions.update();
 }
 
 //--------------------------------------------------------------
@@ -46,7 +48,8 @@ void ofApp::draw(){
     ofPopMatrix();
     
     ofPushMatrix();
-    ui.draw();
+    uiFilter.draw();
+    uiOptions.draw();
     
     ofDrawBitmapStringHighlight(ofToString(imageIndex+1)+"/"+ofToString(images.size()), 10, 15);
     ofPopMatrix();
@@ -107,7 +110,8 @@ void ofApp::keyReleased(int key){
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-    ui.mouseMoved(x, y);
+    uiFilter.mouseMoved(x, y);
+    uiOptions.mouseMoved(x, y);
 }
 
 //--------------------------------------------------------------
@@ -117,7 +121,8 @@ void ofApp::mouseDragged(int x, int y, int button){
         camera.y += mouseY-ofGetPreviousMouseY();
     }
     else {
-        ui.mouseDragged(x, y);
+        uiFilter.mouseDragged(x, y);
+        uiOptions.mouseDragged(x, y);
     }
 }
 
@@ -125,7 +130,8 @@ void ofApp::mouseDragged(int x, int y, int button){
 void ofApp::mousePressed(int x, int y, int button){
     movedCamera = x<ofGetWidth()-globals->menuSize;
     
-    ui.mousePressed(x, y, button);
+    uiFilter.mousePressed(x, y, button);
+    uiOptions.mousePressed(x, y, button);
     updateUI();
 }
 
@@ -133,7 +139,8 @@ void ofApp::mousePressed(int x, int y, int button){
 void ofApp::mouseReleased(int x, int y, int button){
     movedCamera = false;
     
-    ui.mouseReleased(x, y);
+    uiFilter.mouseReleased(x, y);
+    uiOptions.mouseReleased(x, y);
     updateUI();
     
     process();
@@ -168,7 +175,7 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-    ui.setup(ofGetWidth()-globals->menuSize, 0, globals->menuSize, ofGetHeight());
+    createUI();
 }
 
 //--------------------------------------------------------------
@@ -309,15 +316,25 @@ void ofApp::filtersReorder() {
     }
 }
 
+void ofApp::createUI(){
+    uiFilter.setup(ofGetWidth()-globals->menuSize, 0, globals->menuSize, ofGetHeight()-60);
+    uiOptions.setup(ofGetWidth()-globals->menuSize, ofGetHeight()-60, globals->menuSize, 60);
+    
+    uiOptions.addComponent(new UIBotton(20, 10, 120, 40, "CANCEL"));
+    uiOptions.addComponent(new UIBotton(170, 10, 120, 40, "SAVE"));
+    uiOptions.addComponent(new UIBotton(320, 10, 120, 40, "SAVE ALL"));
+
+}
+
 void ofApp::updateUI(){
-    ui.clear();
+    uiFilter.clear();
     
     filtersReorder();
     
     float auxHeight = 0;
     for(int i = 0; i < filters.size(); i++){
         filters[i]->layout.y = auxHeight;
-        ui.addComponent(&filters[i]->layout);
+        uiFilter.addComponent(&filters[i]->layout);
         auxHeight += filters[i]->layout.getHeight();
     }
     

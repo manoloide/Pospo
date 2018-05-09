@@ -20,6 +20,7 @@
 #include "Image.h"
 
 #include "UILayout.h"
+#include "UIBotton.h"
 #include "UISlider.h"
 
 class ofApp : public ofBaseApp{
@@ -47,6 +48,7 @@ class ofApp : public ofBaseApp{
     ofxJSON presset;
     
     void filtersReorder();
+    void createUI();
     void updateUI();
     void process();
     
@@ -63,6 +65,6 @@ class ofApp : public ofBaseApp{
     vector<Image> images;
     vector<Filter *> filters;
     
-    UILayout ui;
+    UILayout uiFilter, uiOptions;
     
 };
