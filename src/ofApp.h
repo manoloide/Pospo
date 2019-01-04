@@ -31,7 +31,7 @@ class ofApp : public ofBaseApp{
 		void draw();
 
 		void keyPressed(int key);
-		void keyReleased(int key);
+        void keyReleased(int key);
 		void mouseMoved(int x, int y);
 		void mouseDragged(int x, int y, int button);
 		void mousePressed(int x, int y, int button);
@@ -52,6 +52,11 @@ class ofApp : public ofBaseApp{
     void updateUI();
     void process();
     
+    void cancel();
+    void save();
+    void saveAll();
+    void saveImage(ofFbo * fbo, string path);
+    
     bool movedCamera;
     bool viewOriginal;
     
@@ -62,9 +67,11 @@ class ofApp : public ofBaseApp{
     float zoom;
     
     int imageIndex = 0;
+    Image * actualImage;
     vector<Image> images;
     vector<Filter *> filters;
     
     UILayout uiFilter, uiOptions;
+    UIBotton * buttonCancel, * buttonSave, * buttonSaveAll;
     
 };

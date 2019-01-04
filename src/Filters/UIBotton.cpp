@@ -10,9 +10,12 @@ void UIBotton::setup(float _x, float _y, float _w, float _h, string _name){
     w = _w;
     h = _h;
     name = _name;
+    
+    on = click = false;
 }
 
 void UIBotton::update(){
+    click = false;
 }
 
 void UIBotton::draw(){
@@ -32,7 +35,7 @@ void UIBotton::mouseMoved(int mouseX, int mouseY){
 
 void UIBotton::mousePressed(int mouseX, int mouseY, int button){
     on = (mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
-    value = true;
+    value = click = on;
 }
 
 void UIBotton::mouseDragged(int mouseX, int mouseY){
@@ -40,7 +43,7 @@ void UIBotton::mouseDragged(int mouseX, int mouseY){
 }
 
 void UIBotton::mouseReleased(int mouseX, int mouseY){
-    on = false;
+    on = click = false;
 }
 
 float UIBotton::getValue() {

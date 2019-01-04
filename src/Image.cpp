@@ -17,5 +17,5 @@ Image::Image(string filename){
 }
 
 string Image::getSavePathName(){
-    return directory + "/post_" + name;
+    return directory + "/pospo_" + name;
 }

@@ -22,7 +22,7 @@ public:
     void setValue(float val) override;
     void randValue() override;
     
-    bool on;
+    bool on, click;
     bool value;
 };
 

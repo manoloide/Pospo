@@ -9,75 +9,88 @@ void ofApp::setup(){
     
     createUI();
     
+    actualImage = NULL;
+    /*
     Image initImage("init.jpg");
     images.push_back(initImage);
+    imageIndex = 0;
+    actualImage = &initImage;
     pospo.allocate(initImage.image.getWidth(), initImage.image.getHeight());
+    */
     
     globals->init(&pospo);
-    
     loadPresset();
     
     updateUI();
     process();
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    
+    if(buttonCancel->click){
+        cancel();
+    }
+    if(buttonSave->click){
+        save();
+    }
+    if(buttonSaveAll->click){
+        saveAll();
+    }
+    
     uiFilter.update();
     uiOptions.update();
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofPushMatrix();
-    ofTranslate((ofGetWidth()-globals->menuSize)/2, ofGetHeight()/2);
-    ofTranslate(camera.x, camera.y);
-    float sca = pow(1.5, zoom);
-    ofScale(sca, sca);
-    ofSetColor(80);
-    ofDrawRectangle(-2, -2, 4, 4);
-    ofSetColor(255);
-    if(viewOriginal) {
-        if(images[imageIndex].image.isAllocated())
-            images[imageIndex].image.draw(images[imageIndex].image.getWidth()*-0.5, images[imageIndex].image.getHeight()*-0.5);
+    
+    if(actualImage != NULL){
+        ofPushMatrix();
+        ofTranslate((ofGetWidth()-globals->menuSize)/2, ofGetHeight()/2);
+        ofTranslate(camera.x, camera.y);
+        float sca = pow(1.5, zoom);
+        ofScale(sca, sca);
+        ofSetColor(80);
+        ofDrawRectangle(-2, -2, 4, 4);
+        ofSetColor(255);
+        if(viewOriginal) {
+            if(actualImage->image.isAllocated())
+                actualImage->image.draw(actualImage->image.getWidth()*-0.5, actualImage->image.getHeight()*-0.5);
+        }
+        else {
+            if(pospo.isAllocated())
+                pospo.draw(pospo.getWidth()*-0.5, pospo.getHeight()*-0.5);
+        }
+        ofPopMatrix();
     }
-    else {
-        if(pospo.isAllocated())
-            pospo.draw(pospo.getWidth()*-0.5, pospo.getHeight()*-0.5);
-    }
-    ofPopMatrix();
+    
     
     ofPushMatrix();
     uiFilter.draw();
     uiOptions.draw();
     
-    ofDrawBitmapStringHighlight(ofToString(imageIndex+1)+"/"+ofToString(images.size()), 10, 15);
+    globals->uiFontValue->drawString(ofToString(imageIndex+1)+"/"+ofToString(images.size()), 10, 20);
     ofPopMatrix();
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+    
     if(key == '+') zoom = ofClamp(zoom+1, -5, 5);
     if(key == '-') zoom = ofClamp(zoom-1, -5, 5);
     if(key == 'r') {
         loadPresset();
         process();
     }
+    
     if(key == 's') savePresset();
     if(key == 'l') loadPresset();
     if(key == 'p') process();
     if(key == ' ') viewOriginal = true;
-    
-    
-    //this is a bug
-    if(ofGetKeyPressed(OF_KEY_LEFT_COMMAND)){
-        if(key == 's') {
-            ofPixels pixels;
-            pospo.readToPixels(pixels);
-            string name = images[imageIndex].getSavePathName();
-            ofSaveImage(pixels, name);
-        }
-    }
     
     if(key == 'h') {
         for(int i = 0; i < filters.size(); i++){
@@ -87,35 +100,51 @@ void ofApp::keyPressed(int key){
     }
     
     if(key == OF_KEY_LEFT){
+        
         imageIndex--;
         if(imageIndex < 0)
             imageIndex = (int)images.size()-1;
-        pospo.allocate(images[imageIndex].image.getWidth(), images[imageIndex].image.getHeight());
+        
+        actualImage = &images[imageIndex];
+        pospo.allocate(actualImage->image.getWidth(), actualImage->image.getHeight());
         globals->init(&pospo);
         process();
+        
     }
+    
     if(key == OF_KEY_RIGHT) {
+        
         imageIndex++;
-        imageIndex = imageIndex%images.size();
-        pospo.allocate(images[imageIndex].image.getWidth(), images[imageIndex].image.getHeight());
+        if(imageIndex >= images.size())
+            imageIndex = 0;
+        
+        actualImage = &images[imageIndex];
+        pospo.allocate(actualImage->image.getWidth(), actualImage->image.getHeight());
         globals->init(&pospo);
         process();
+        
     }
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
+    
     if(key == ' ') viewOriginal = false;
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
+    
     uiFilter.mouseMoved(x, y);
     uiOptions.mouseMoved(x, y);
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
+    
     if(movedCamera) {
         camera.x += mouseX-ofGetPreviousMouseX();
         camera.y += mouseY-ofGetPreviousMouseY();
@@ -124,19 +153,23 @@ void ofApp::mouseDragged(int x, int y, int button){
         uiFilter.mouseDragged(x, y);
         uiOptions.mouseDragged(x, y);
     }
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
+    
     movedCamera = x<ofGetWidth()-globals->menuSize;
     
     uiFilter.mousePressed(x, y, button);
     uiOptions.mousePressed(x, y, button);
     updateUI();
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
+    
     movedCamera = false;
     
     uiFilter.mouseReleased(x, y);
@@ -144,11 +177,13 @@ void ofApp::mouseReleased(int x, int y, int button){
     updateUI();
     
     process();
+    
 }
 
 
 //--------------------------------------------------------------
 void ofApp::mouseScrolled(int x, int y, float scrollX, float scrollY){
+    
     float w = ofGetWidth()-globals->menuSize;
     float h = ofGetHeight();
     if(x<w) {
@@ -161,6 +196,7 @@ void ofApp::mouseScrolled(int x, int y, float scrollX, float scrollY){
         camera.x -= (mx-camera.x)*(zoom-azoom)*0.41;
         camera.y -= (my-camera.y)*(zoom-azoom)*0.41;
     }
+    
 }
 
 //--------------------------------------------------------------
@@ -186,7 +222,6 @@ void ofApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){
     
-    
     int init = (int)images.size();
     bool add = false;
     
@@ -201,7 +236,8 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
     
     if(add) {
         imageIndex = init;
-        pospo.allocate(images[imageIndex].image.getWidth(), images[imageIndex].image.getHeight());
+        actualImage = &images[imageIndex];
+        pospo.allocate(actualImage->image.getWidth(), actualImage->image.getHeight());
         globals->init(&pospo);
         process();
     }
@@ -290,9 +326,11 @@ void ofApp::savePresset(){
     } else {
         cout << "save presset succeed" << endl;
     }
+    
 }
 
 void ofApp::filtersReorder() {
+    
     for(int i = 0; i < filters.size(); i++) {
         if(filters[i]->layout.toDown && i < filters.size()-1){
             Filter * aux = filters[i];
@@ -314,19 +352,26 @@ void ofApp::filtersReorder() {
          }
          */
     }
+    
 }
 
 void ofApp::createUI(){
+    
     uiFilter.setup(ofGetWidth()-globals->menuSize, 0, globals->menuSize, ofGetHeight()-60);
     uiOptions.setup(ofGetWidth()-globals->menuSize, ofGetHeight()-60, globals->menuSize, 60);
     
-    uiOptions.addComponent(new UIBotton(20, 10, 120, 40, "CANCEL"));
-    uiOptions.addComponent(new UIBotton(170, 10, 120, 40, "SAVE"));
-    uiOptions.addComponent(new UIBotton(320, 10, 120, 40, "SAVE ALL"));
+    buttonCancel = new UIBotton( 25, 10, 130, 40, "CANCEL");
+    buttonSave = new UIBotton( 175, 10, 130, 40, "SAVE");
+    buttonSaveAll = new UIBotton(325, 10, 130, 40, "SAVE ALL");
+    
+    uiOptions.addComponent(buttonCancel);
+    uiOptions.addComponent(buttonSave);
+    uiOptions.addComponent(buttonSaveAll);
 
 }
 
 void ofApp::updateUI(){
+    
     uiFilter.clear();
     
     filtersReorder();
@@ -341,11 +386,56 @@ void ofApp::updateUI(){
 }
 
 void ofApp::process(){
+    
+    if(actualImage == NULL) return;
+    
     ofSetColor(255);
     pospo.begin();
     images[imageIndex].image.draw(0, 0);
     pospo.end();
+    
     for(int i = 0; i < filters.size(); i++) {
         if(filters[i]->getEnable()) filters[i]->process(&pospo);
     }
+    
+}
+
+void ofApp::cancel(){
+    
+    cout << "Cancel" << endl;
+    ofExit();
+    
+}
+
+void ofApp::save(){
+    
+    string path = actualImage->getSavePathName();
+    process();
+    saveImage(&pospo, path);
+    
+    //closeImage(actualImage);
+    
+}
+
+void ofApp::saveAll(){
+    
+    for(int i = 0; i < images.size(); i++){
+        imageIndex = i;
+        actualImage = &images[imageIndex];
+        string path = actualImage->getSavePathName();
+        process();
+        saveImage(&pospo, path);
+    }
+    
+    cancel();
+    
+}
+
+
+void ofApp::saveImage(ofFbo * fbo, string path){
+    
+    ofPixels pix;
+    fbo->readToPixels(pix);
+    ofSaveImage(pix, path);
+    
 }
